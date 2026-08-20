@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Agentic 3D Creation via Joint Agent-Program Design</title>
+  <meta name="title" content="Agentic 3D Creation via Joint Agent-Program Design">
+  <meta name="description" content="A jointly designed agent-centric domain-specific language and multi-agent system for robust, controllable, and editable programmatic 3D creation.">
+  <meta name="keywords" content="agentic 3D creation, aDSL, domain-specific language, multi-agent system, programmatic 3D modeling, spatial reasoning">
+  <meta name="author" content="Ruihuan Wang et al.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2563eb">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Agentic 3D Creation via Joint Agent-Program Design">
+  <meta property="og:description" content="A jointly designed language and multi-agent system for robust, controllable programmatic 3D creation.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Agentic 3D Creation via Joint Agent-Program Design">
+  <meta name="twitter:description" content="A jointly designed language and multi-agent system for robust, controllable programmatic 3D creation.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+</head>
+<body>
+  <button id="scroll-to-top" class="scroll-to-top" type="button" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <main id="main-content">
+    <section class="hero publication-header">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Agentic 3D Creation via Joint Agent-Program Design</h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><a href="https://keunhong.com" target="_blank" rel="noopener noreferrer">Ruihuan Wang</a><sup>1</sup>,</span>
+                <span class="author-block"><a href="https://utkarshsinha.com" target="_blank" rel="noopener noreferrer">au2</a><sup>2</sup>,</span>
+                <span class="author-block"><a href="https://jonbarron.info" target="_blank" rel="noopener noreferrer">au3</a><sup>2</sup>,</span>
+                <span class="author-block"><a href="http://sofienbouaziz.com" target="_blank" rel="noopener noreferrer">au4</a><sup>2</sup>,</span>
+                <span class="author-block"><a href="https://www.danbgoldman.com" target="_blank" rel="noopener noreferrer">au5</a><sup>2</sup>,</span>
+                <span class="author-block"><a href="https://homes.cs.washington.edu/~seitz/" target="_blank" rel="noopener noreferrer">au6</a><sup>1,2</sup>,</span>
+                <span class="author-block"><a href="http://www.ricardomartinbrualla.com" target="_blank" rel="noopener noreferrer">au7</a><sup>2</sup></span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>Peking University,</span>
+                <span class="author-block"><sup>2</sup>ByteDance?</span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://arxiv.org/pdf/2011.12948" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-file-pdf" aria-hidden="true"></i></span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2011.12948" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="ai ai-arxiv" aria-hidden="true"></i></span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-youtube" aria-hidden="true"></i></span>
+                      <span>Video</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://github.com/DylanWRh/scene-program" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://github.com/google/nerfies/releases/tag/0.1" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="far fa-images" aria-hidden="true"></i></span>
+                      <span>Data</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <figure class="research-figure teaser-figure">
+            <img src="static/images/teaser-v3.jpg" alt="SceneLang teaser showing agentic 3D creation results" fetchpriority="high">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>Programmatic representations provide a compelling paradigm for 3D content creation, enabling fine-grained edits, interpretability, and explicit structural control. Yet, agentic workflows that rely on large language models (LLMs) to author 3D programs remain brittle, often failing to translate high-level intent into consistent low-level geometry. We attribute this fragility to a mismatch between existing programmatic interfaces and the reasoning strengths of LLMs, which favor semantic structure and spatial relations over fragile numeric choices. In this paper, we jointly design an Agent-centric Domain-Specific Language (aDSL) and a role-specialized multi-agent system to close this gap. aDSL bridges semantic logic and geometric constraints by emphasizing composability and spatial reasoning; it enables agents to manipulate geometry through relational operators instead of brittle absolute coordinates. Building on aDSL, our training-free multi-agent system follows a Plan–Execute–Critic loop to decompose requests, synthesize code, and iteratively repair errors and constraint violations using execution feedback. Experiments show that this co-design improves robustness, controllability, and faithfulness to user intent. Our method outperforms prior LLM-based baselines on text-to-shape and image-to-shape tasks while preserving explicit structure, editability, and interpretability. It also enables downstream applications such as articulated object creation and structured scene composition. We will release our code to ensure reproducibility.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Agentic System Overview</h2>
+            <figure class="research-figure">
+              <img src="static/images/overview-v5.png" alt="Overview of the agentic 3D creation system" loading="lazy">
+            </figure>
+            <div class="content has-text-justified">
+              <p>Overview of our agentic 3D creation system. Given user input, <em>Planner</em> derives structured decompositions and verifiable constraints.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3">Gallery</h2>
+        <div class="columns is-centered gallery-columns">
+          <div class="column">
+            <article class="card gallery-card">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="static/images/High-Fidelity-v1.jpg" alt="High-fidelity shape generation results" loading="lazy">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content is-size-7">High-fidelity shape generation results via external model conditioning. The aDSL program (“Ours”) serves as a geometric scaffold to guide the external generator via the SpaceControl protocol (“Ours + SpaceControl”).</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="column">
+            <article class="card gallery-card">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="static/images/image2scene-v1.jpg" alt="Image-to-scene generation results" loading="lazy">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content is-size-7">Image-to-scene generation results. 这里应该放原图</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="column">
+            <article class="card gallery-card">
+              <div class="card-image gallery-video">
+                <video autoplay controls muted loop playsinline preload="metadata" data-autoplay aria-label="Pipe generation result video">
+                  <source src="static/videos/pipe.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="card-content">
+                <div class="content is-size-7">video test.</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Shape Editing</h2>
+            <figure class="research-figure">
+              <img src="static/images/editing-v2.jpg" alt="Shape editing through programmatic manipulation" loading="lazy">
+            </figure>
+            <div class="content has-text-justified">
+              <p>Shape editing via programmatic manipulation. Given user instructions, our system precisely localizes and rewrites specific code segments to effect geometric changes, as highlighted by the insertions (green) and deletions (red).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Articulation</h2>
+            <div class="columns is-multiline is-centered articulation-grid">
+              <div class="column is-one-third"><video autoplay controls muted loop playsinline preload="metadata" data-autoplay aria-label="Toolbox articulation result"><source src="static/videos/toolbox30001-0120.mp4" type="video/mp4"></video></div>
+              <div class="column is-one-third"><video autoplay controls muted loop playsinline preload="metadata" data-autoplay aria-label="Stationery articulation result"><source src="static/videos/stationery150001-0120.mp4" type="video/mp4"></video></div>
+              <div class="column is-one-third"><video autoplay controls muted loop playsinline preload="metadata" data-autoplay aria-label="Faucet articulation result"><source src="static/videos/faucet100001-0120.mp4" type="video/mp4"></video></div>
+              <div class="column is-one-third"><video autoplay controls muted loop playsinline preload="metadata" data-autoplay aria-label="Trash can articulation result"><source src="static/videos/trash30001-0120.mp4" type="video/mp4"></video></div>
+              <div class="column is-one-third"><video autoplay controls muted loop playsinline preload="metadata" data-autoplay aria-label="Scissors articulation result"><source src="static/videos/scissors150001-0120.mp4" type="video/mp4"></video></div>
+              <div class="column is-one-third"><video autoplay controls muted loop playsinline preload="metadata" data-autoplay aria-label="Fridge articulation result"><source src="static/videos/fridge70001-0120.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="content has-text-justified">
+              <p>Articulated object generation results, including prismatic joints (linear translation) and revolute joints (rotational motion).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">DSL Overview</h2>
+            <figure class="research-figure">
+              <img src="static/images/DSL-v4.jpg" alt="Design and usage of aDSL for programmatic 3D shape modeling" loading="lazy">
+            </figure>
+            <div class="content has-text-justified">
+              <p>Design and usage of our aDSL for programmatic 3D shape modeling. (a) aDSL: Our framework is built on four core design elements: geometric primitives, boolean operations, hierarchical composition, and spatial reasoning. (b) Component Fabrication: Complex shapes are constructed via Constructive Solid Geometry (CSG) and hierarchical composition. Additionally, spatial reasoning operators are applied to declaratively resolve layout constraints and relative positioning. (c) Global Assembly: Fabricated parts are organized hierarchically into a semantic object using Python classes, facilitating modular reuse and high-level asset definition.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>, adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a> project page. You are free to borrow the source code; please link back to the template in the footer. This website is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
