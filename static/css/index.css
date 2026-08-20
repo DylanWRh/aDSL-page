@@ -742,6 +742,13 @@ code {
   box-shadow: var(--shadow-lg);
 }
 
+.figure-caption {
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
 .teaser-figure {
   margin-bottom: 0;
 }
@@ -770,20 +777,14 @@ code {
   align-items: center;
 }
 
-.gallery-card .image,
-.gallery-video {
+.gallery-card .image {
   background: var(--background-accent);
 }
 
-.gallery-card .image img,
-.gallery-video video {
+.gallery-card .image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-.gallery-video {
-  aspect-ratio: 1;
 }
 
 .articulation-grid video {
