@@ -1,0 +1,19 @@
+name: Trigger homepage deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger DylanWRh.github.io deployment
+        env:
+          GH_TOKEN: ${{ secrets.HOMEPAGE_DEPLOY_TOKEN }}
+        run: |
+          gh workflow run deploy-pages.yml \
+            --repo DylanWRh/DylanWRh.github.io \
+            --ref main
