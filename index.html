@@ -6,7 +6,7 @@
 
   <title>aDSL: Agentic 3D Creation via Joint Agent-Program Design</title>
   <meta name="title" content="aDSL: Agentic 3D Creation via Joint Agent-Program Design">
-  <meta name="description" content="A jointly designed agent-centric domain-specific language and multi-agent system for robust, controllable, and editable programmatic 3D creation.">
+  <meta name="description" content="Training-free agentic 3D creation with editable programs, spatial reasoning, and iterative verification.">
   <meta name="keywords" content="agentic 3D creation, aDSL, domain-specific language, multi-agent system, programmatic 3D modeling, spatial reasoning">
   <meta name="author" content="Rui-Huan Wang, Si-Tong Wei, Jia-Qi He, Heng-Yi Wei, Baoquan Chen, Peng-Shuai Wang">
   <meta name="robots" content="index, follow">
@@ -14,10 +14,10 @@
 
   <meta property="og:type" content="article">
   <meta property="og:title" content="aDSL: Agentic 3D Creation via Joint Agent-Program Design">
-  <meta property="og:description" content="A jointly designed language and multi-agent system for robust, controllable programmatic 3D creation.">
+  <meta property="og:description" content="Agents that plan, build, verify, and edit structured 3D assets.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="aDSL: Agentic 3D Creation via Joint Agent-Program Design">
-  <meta name="twitter:description" content="A jointly designed language and multi-agent system for robust, controllable programmatic 3D creation.">
+  <meta name="twitter:description" content="Agents that plan, build, verify, and edit structured 3D assets.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css?v=20260824-19">
+  <link rel="stylesheet" href="static/css/index.css?v=20260824-20">
 
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/index.js?v=20260824-6"></script>
@@ -97,7 +97,7 @@
           <figure class="publication-banner">
             <video data-autoplay autoplay muted loop playsinline controls preload="metadata" aria-label="aDSL project overview video">
               <source src="static/assets/video_new.mp4" type="video/mp4">
-              Your browser does not support embedded video. <a href="static/assets/video_new.mp4">Download the video</a>.
+              Your browser can't play this video. <a href="static/assets/video_new.mp4">Download video</a>.
             </video>
           </figure>
         </div>
@@ -111,35 +111,8 @@
           <div class="column is-four-fifths">
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
-              <p>Programmatic representations provide a compelling paradigm for 3D content creation, enabling fine-grained edits, interpretability, and explicit structural control. Yet, agentic workflows that rely on large language models (LLMs) to author 3D programs remain brittle, often failing to translate high-level intent into consistent low-level geometry. We attribute this fragility to a mismatch between existing programmatic interfaces and the reasoning strengths of LLMs, which favor semantic structure and spatial relations over fragile numeric choices. In this paper, we jointly design an Agent-centric Domain-Specific Language (aDSL) and a role-specialized multi-agent system to close this gap. aDSL bridges semantic logic and geometric constraints by emphasizing composability and spatial reasoning; it enables agents to manipulate geometry through relational operators instead of brittle absolute coordinates. Building on aDSL, our training-free multi-agent system follows a Plan–Execute–Critic loop to decompose requests, synthesize code, and iteratively repair errors and constraint violations using execution feedback. Experiments show that this co-design improves robustness, controllability, and faithfulness to user intent. Our method outperforms prior LLM-based baselines on text-to-shape and image-to-shape tasks while preserving explicit structure, editability, and interpretability. It also enables downstream applications such as articulated object creation and structured scene composition. <em>Our code is available at <a href="https://github.com/sig-pku/aDSL" target="_blank" rel="noopener noreferrer">https://github.com/sig-pku/aDSL</a>.</em></p>
+              <p>Programmatic representations provide a compelling paradigm for 3D content creation, enabling fine-grained edits, interpretability, and explicit structural control. Yet, agentic workflows that rely on large language models (LLMs) to author 3D programs remain brittle, often failing to translate high-level intent into consistent low-level geometry. We attribute this fragility to a mismatch between existing programmatic interfaces and the reasoning strengths of LLMs, which favor semantic structure and spatial relations over fragile numeric choices. In this paper, we jointly design an Agent-centric Domain-Specific Language (aDSL) and a role-specialized multi-agent system to close this gap. aDSL bridges semantic logic and geometric constraints by emphasizing composability and spatial reasoning; it enables agents to manipulate geometry through relational operators instead of brittle absolute coordinates. Building on aDSL, our training-free multi-agent system follows a Plan–Execute–Critic loop to decompose requests, synthesize code, and iteratively repair errors and constraint violations using execution feedback. Experiments show that this co-design improves robustness, controllability, and faithfulness to user intent. Our method outperforms prior LLM-based baselines on text-to-shape and image-to-shape tasks while preserving explicit structure, editability, and interpretability. It also enables downstream applications such as articulated object creation and structured scene composition.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Method -->
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">Method</h2>
-            <div class="content has-text-justified method-copy">
-              <p>aDSL gives 3D agents a compact vocabulary for constructing editable assets. It combines geometric primitives and Boolean operations with hierarchical composition and spatial-reasoning operators, allowing complex components to be fabricated locally and assembled through semantic relationships.</p>
-            </div>
-            <figure class="research-figure method-dsl-figure">
-              <img src="static/assets/dsl.png" alt="Overview of aDSL showing primitives, Boolean operations, hierarchical composition, spatial reasoning, component fabrication, and global assembly" loading="lazy">
-              <figcaption class="figure-caption content has-text-justified"><strong>aDSL design.</strong> (a) Four core abstractions provide primitives, Boolean operations, hierarchical composition, and spatial reasoning. (b) Components are fabricated through constructive geometry and reusable part hierarchies. (c) Semantic classes and relational layout constraints assemble those components into complete, editable 3D assets.</figcaption>
-            </figure>
-
-            <div class="method-agent-copy content has-text-justified">
-              <h3>Role-specialized agent system</h3>
-              <p>The agent system turns a text or image request into an executable aDSL program through a self-correcting workflow. A planner derives structure and constraints, a coder synthesizes the program, and an executor produces the asset. Execution failures are repaired by the debugger, while the critic checks semantic and geometric fidelity before approving the final result or returning targeted feedback.</p>
-            </div>
-            <figure class="research-figure method-agent-figure">
-              <img src="static/assets/agent.png" alt="aDSL agent workflow from user input through Planner, Coder, Executor, Debugger, and Critic to an approved 3D asset" loading="lazy">
-              <figcaption class="figure-caption content has-text-justified"><strong>Agent system.</strong> The role-specialized workflow follows a Plan–Execute–Critic loop. Structured plans and constraints guide code generation; execution feedback triggers debugger repairs; and critic feedback iteratively refines the program until the generated 3D asset is approved.</figcaption>
-            </figure>
           </div>
         </div>
       </div>
@@ -153,12 +126,12 @@
 
             <figure class="research-figure">
               <img src="static/assets/text2shape.png" alt="Text-to-shape comparisons across Trellis, BlenderLLM, LlamaMesh, BlenderMCP, ShapeCraft, IL3M, Scene Language, and aDSL on bookshelf, office desk, and chair prompts" loading="lazy">
-              <figcaption class="figure-caption content has-text-justified"><strong>Text-to-shape results.</strong> Across furniture with detailed structural, material, and spatial requirements, aDSL produces complete assets that closely reflect the described parts and their relationships.</figcaption>
+              <figcaption class="figure-caption content has-text-centered"><strong>Text-conditioned generation</strong></figcaption>
             </figure>
 
             <figure class="research-figure">
               <img src="static/assets/image2shape.png" alt="Image-to-shape comparisons across Trellis, LN3Diff, Direct3D-S2, ShapeCraft, Scene Language, and aDSL on bicycle and vehicle reference images" loading="lazy">
-              <figcaption class="figure-caption content has-text-justified"><strong>Image-to-shape results.</strong> Given a single reference image, aDSL preserves recognizable object structure, part layout, and color while retaining a programmatic representation that can be inspected and edited.</figcaption>
+              <figcaption class="figure-caption content has-text-centered"><strong>Image-conditioned generation</strong></figcaption>
             </figure>
           </div>
         </div>
@@ -169,28 +142,28 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-full-width">
-            <h2 id="shape-editing-title" class="title is-3">Shape Editing</h2>
+            <h2 id="shape-editing-title" class="title is-3">Edit Without Starting Over</h2>
             <div class="editing-carousel" data-results-carousel role="region" aria-roledescription="carousel" aria-labelledby="shape-editing-title">
               <div class="editing-carousel__viewport editing-carousel__viewport--shape-editing">
-                <figure class="research-figure editing-example is-active" data-results-slide role="group" aria-roledescription="slide" aria-label="Primitive substitution">
+                <figure class="research-figure editing-example is-active" data-results-slide role="group" aria-roledescription="slide" aria-label="primitive type edit">
                   <div class="editing-example__image-frame">
                     <img src="static/assets/edit-1.png" alt="A rectangular sink edited into a rounded sink by changing the inner and outer primitives from cubes to cylinders" width="961" height="233" loading="lazy">
                   </div>
-                  <figcaption class="figure-caption content has-text-centered"><strong>Primitive substitution</strong></figcaption>
+                  <figcaption class="figure-caption content has-text-centered"><strong>primitive type edit</strong></figcaption>
                 </figure>
 
-                <figure class="research-figure editing-example" data-results-slide role="group" aria-roledescription="slide" aria-label="Instance count" hidden>
+                <figure class="research-figure editing-example" data-results-slide role="group" aria-roledescription="slide" aria-label="object count edit" hidden>
                   <div class="editing-example__image-frame">
                     <img src="static/assets/edit-2.png" alt="A dining-table set edited from four chairs to six chairs by changing the chair-count parameter" width="961" height="235" loading="lazy">
                   </div>
-                  <figcaption class="figure-caption content has-text-centered"><strong>Instance count</strong></figcaption>
+                  <figcaption class="figure-caption content has-text-centered"><strong>object count edit</strong></figcaption>
                 </figure>
 
-                <figure class="research-figure editing-example" data-results-slide role="group" aria-roledescription="slide" aria-label="Spatial refinement" hidden>
+                <figure class="research-figure editing-example" data-results-slide role="group" aria-roledescription="slide" aria-label="spacing edit" hidden>
                   <div class="editing-example__image-frame">
                     <img src="static/assets/edit-3.png" alt="A woven rod structure made denser by reducing its rod-spacing parameter from 0.2 to 0.1" width="961" height="253" loading="lazy">
                   </div>
-                  <figcaption class="figure-caption content has-text-centered"><strong>Spatial refinement</strong></figcaption>
+                  <figcaption class="figure-caption content has-text-centered"><strong>spacing edit</strong></figcaption>
                 </figure>
               </div>
 
@@ -206,76 +179,13 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-full-width">
-            <h2 id="high-fidelity-replacement-title" class="title is-3">High-Fidelity Replacement</h2>
+            <div class="asset-showcase__header has-text-centered">
+              <h2 id="high-fidelity-replacement-title" class="title is-3">From Structure to Fidelity</h2>
+              <p class="figure-caption content has-text-justified">By applying external 3D generative models to structured aDSL outputs, we enhance geometric detail while preserving the original composition and spatial relationships.</p>
+            </div>
             <div class="editing-carousel" data-results-carousel role="region" aria-roledescription="carousel" aria-labelledby="high-fidelity-replacement-title">
               <div class="editing-carousel__viewport">
-            <figure class="research-figure comparison-case is-active" data-results-slide role="group" aria-roledescription="slide" aria-label="Upright piano">
-              <div
-                class="model-comparison"
-                data-model-comparison
-                data-before-model="static/resources/high-fidelity-object/piano-1.glb"
-                data-after-model="static/resources/high-fidelity-object/piano-2.glb"
-                role="group"
-                aria-label="Interactive comparison of the original piano and its high-fidelity replacement"
-              >
-                <canvas data-comparison-canvas aria-hidden="true"></canvas>
-                <span class="model-comparison__label model-comparison__label--before">Original</span>
-                <span class="model-comparison__label model-comparison__label--after">High-fidelity replacement</span>
-                <div
-                  class="model-comparison__divider"
-                  data-comparison-divider
-                >
-                  <span class="model-comparison__handle" aria-hidden="true"><i class="fas fa-arrows-alt-h"></i></span>
-                </div>
-                <div class="asset-viewer__status" data-comparison-status role="status">
-                  <span class="asset-viewer__spinner" aria-hidden="true"></span>
-                  <span>Loading comparison</span>
-                </div>
-                <div class="asset-viewer__hint" data-comparison-hint>
-                  <i class="fas fa-hand-pointer" aria-hidden="true"></i>
-                  <span>Drag to rotate <span aria-hidden="true">&middot;</span> Scroll to zoom</span>
-                </div>
-                <button class="asset-viewer__reset" data-comparison-reset type="button" aria-label="Reset piano comparison view">
-                  <i class="fas fa-undo" aria-hidden="true"></i>
-                  <span>Reset view</span>
-                </button>
-              </div>
-            </figure>
-
-            <figure class="research-figure comparison-case" data-results-slide role="group" aria-roledescription="slide" aria-label="Sofa" hidden>
-              <div
-                class="model-comparison"
-                data-model-comparison
-                data-before-model="static/resources/high-fidelity-object/sofa-1.glb"
-                data-after-model="static/resources/high-fidelity-object/sofa-2.glb"
-                role="group"
-                aria-label="Interactive comparison of the original sofa and its high-fidelity replacement"
-              >
-                <canvas data-comparison-canvas aria-hidden="true"></canvas>
-                <span class="model-comparison__label model-comparison__label--before">Original</span>
-                <span class="model-comparison__label model-comparison__label--after">High-fidelity replacement</span>
-                <div
-                  class="model-comparison__divider"
-                  data-comparison-divider
-                >
-                  <span class="model-comparison__handle" aria-hidden="true"><i class="fas fa-arrows-alt-h"></i></span>
-                </div>
-                <div class="asset-viewer__status" data-comparison-status role="status">
-                  <span class="asset-viewer__spinner" aria-hidden="true"></span>
-                  <span>Loading comparison</span>
-                </div>
-                <div class="asset-viewer__hint" data-comparison-hint>
-                  <i class="fas fa-hand-pointer" aria-hidden="true"></i>
-                  <span>Drag to rotate <span aria-hidden="true">&middot;</span> Scroll to zoom</span>
-                </div>
-                <button class="asset-viewer__reset" data-comparison-reset type="button" aria-label="Reset sofa comparison view">
-                  <i class="fas fa-undo" aria-hidden="true"></i>
-                  <span>Reset view</span>
-                </button>
-              </div>
-            </figure>
-
-            <figure class="research-figure comparison-case" data-results-slide role="group" aria-roledescription="slide" aria-label="Kitchen" hidden>
+            <figure class="research-figure comparison-case is-active" data-results-slide role="group" aria-roledescription="slide" aria-label="Kitchen">
               <div
                 class="model-comparison"
                 data-model-comparison
@@ -285,8 +195,8 @@
                 aria-label="Interactive comparison of the original kitchen scene and its high-fidelity replacement"
               >
                 <canvas data-comparison-canvas aria-hidden="true"></canvas>
-                <span class="model-comparison__label model-comparison__label--before">Original</span>
-                <span class="model-comparison__label model-comparison__label--after">High-fidelity replacement</span>
+                <span class="model-comparison__label model-comparison__label--before">aDSL scaffold</span>
+                <span class="model-comparison__label model-comparison__label--after">Detail-enhanced result</span>
                 <div
                   class="model-comparison__divider"
                   data-comparison-divider
@@ -295,7 +205,7 @@
                 </div>
                 <div class="asset-viewer__status" data-comparison-status role="status">
                   <span class="asset-viewer__spinner" aria-hidden="true"></span>
-                  <span>Loading comparison</span>
+                  <span>Loading model…</span>
                 </div>
                 <div class="asset-viewer__hint" data-comparison-hint>
                   <i class="fas fa-hand-pointer" aria-hidden="true"></i>
@@ -318,8 +228,8 @@
                 aria-label="Interactive comparison of the original living room scene and its high-fidelity replacement"
               >
                 <canvas data-comparison-canvas aria-hidden="true"></canvas>
-                <span class="model-comparison__label model-comparison__label--before">Original</span>
-                <span class="model-comparison__label model-comparison__label--after">High-fidelity replacement</span>
+                <span class="model-comparison__label model-comparison__label--before">aDSL scaffold</span>
+                <span class="model-comparison__label model-comparison__label--after">Detail-enhanced result</span>
                 <div
                   class="model-comparison__divider"
                   data-comparison-divider
@@ -328,13 +238,79 @@
                 </div>
                 <div class="asset-viewer__status" data-comparison-status role="status">
                   <span class="asset-viewer__spinner" aria-hidden="true"></span>
-                  <span>Loading comparison</span>
+                  <span>Loading model…</span>
                 </div>
                 <div class="asset-viewer__hint" data-comparison-hint>
                   <i class="fas fa-hand-pointer" aria-hidden="true"></i>
                   <span>Drag to rotate <span aria-hidden="true">&middot;</span> Scroll to zoom</span>
                 </div>
                 <button class="asset-viewer__reset" data-comparison-reset type="button" aria-label="Reset living room comparison view">
+                  <i class="fas fa-undo" aria-hidden="true"></i>
+                  <span>Reset view</span>
+                </button>
+              </div>
+            </figure>
+
+            <figure class="research-figure comparison-case" data-results-slide role="group" aria-roledescription="slide" aria-label="Upright piano" hidden>
+              <div
+                class="model-comparison"
+                data-model-comparison
+                data-before-model="static/resources/high-fidelity-object/piano-1.glb"
+                data-after-model="static/resources/high-fidelity-object/piano-2.glb"
+                role="group"
+                aria-label="Interactive comparison of the original piano and its high-fidelity replacement"
+              >
+                <canvas data-comparison-canvas aria-hidden="true"></canvas>
+                <span class="model-comparison__label model-comparison__label--before">aDSL scaffold</span>
+                <span class="model-comparison__label model-comparison__label--after">Detail-enhanced result</span>
+                <div
+                  class="model-comparison__divider"
+                  data-comparison-divider
+                >
+                  <span class="model-comparison__handle" aria-hidden="true"><i class="fas fa-arrows-alt-h"></i></span>
+                </div>
+                <div class="asset-viewer__status" data-comparison-status role="status">
+                  <span class="asset-viewer__spinner" aria-hidden="true"></span>
+                  <span>Loading model…</span>
+                </div>
+                <div class="asset-viewer__hint" data-comparison-hint>
+                  <i class="fas fa-hand-pointer" aria-hidden="true"></i>
+                  <span>Drag to rotate <span aria-hidden="true">&middot;</span> Scroll to zoom</span>
+                </div>
+                <button class="asset-viewer__reset" data-comparison-reset type="button" aria-label="Reset piano comparison view">
+                  <i class="fas fa-undo" aria-hidden="true"></i>
+                  <span>Reset view</span>
+                </button>
+              </div>
+            </figure>
+
+            <figure class="research-figure comparison-case" data-results-slide role="group" aria-roledescription="slide" aria-label="Sofa" hidden>
+              <div
+                class="model-comparison"
+                data-model-comparison
+                data-before-model="static/resources/high-fidelity-object/sofa-1.glb"
+                data-after-model="static/resources/high-fidelity-object/sofa-2.glb"
+                role="group"
+                aria-label="Interactive comparison of the original sofa and its high-fidelity replacement"
+              >
+                <canvas data-comparison-canvas aria-hidden="true"></canvas>
+                <span class="model-comparison__label model-comparison__label--before">aDSL scaffold</span>
+                <span class="model-comparison__label model-comparison__label--after">Detail-enhanced result</span>
+                <div
+                  class="model-comparison__divider"
+                  data-comparison-divider
+                >
+                  <span class="model-comparison__handle" aria-hidden="true"><i class="fas fa-arrows-alt-h"></i></span>
+                </div>
+                <div class="asset-viewer__status" data-comparison-status role="status">
+                  <span class="asset-viewer__spinner" aria-hidden="true"></span>
+                  <span>Loading model…</span>
+                </div>
+                <div class="asset-viewer__hint" data-comparison-hint>
+                  <i class="fas fa-hand-pointer" aria-hidden="true"></i>
+                  <span>Drag to rotate <span aria-hidden="true">&middot;</span> Scroll to zoom</span>
+                </div>
+                <button class="asset-viewer__reset" data-comparison-reset type="button" aria-label="Reset sofa comparison view">
                   <i class="fas fa-undo" aria-hidden="true"></i>
                   <span>Reset view</span>
                 </button>
@@ -353,7 +329,8 @@
     <section class="section asset-showcase" aria-labelledby="interactive-results-title">
       <div class="container is-max-desktop">
         <div class="asset-showcase__header has-text-centered">
-          <h2 id="interactive-results-title" class="title is-3">Simulation-Ready Assets</h2>
+            <h2 id="interactive-results-title" class="title is-3">Interactive Assets</h2>
+          <p class="figure-caption content has-text-justified">aDSL defines movable parts and their joints in the same program, making articulated assets directly executable and editable.</p>
         </div>
 
         <div class="editing-carousel" data-results-carousel role="region" aria-roledescription="carousel" aria-labelledby="interactive-results-title">
@@ -364,7 +341,7 @@
                 <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a faucet. Drag to rotate and scroll to zoom.">
                   <div class="asset-viewer__status" data-viewer-status role="status">
                     <span class="asset-viewer__spinner" aria-hidden="true"></span>
-                    <span>Loading URDF asset</span>
+                    <span>Loading model…</span>
                   </div>
                   <div class="asset-viewer__hint" data-viewer-hint>
                     <i class="fas fa-hand-pointer" aria-hidden="true"></i>
@@ -374,18 +351,15 @@
                     <i class="fas fa-undo" aria-hidden="true"></i>
                     <span>Reset view</span>
                   </button>
-                  <noscript><p class="asset-viewer__noscript">Enable JavaScript to explore this URDF asset.</p></noscript>
+                  <noscript><p class="asset-viewer__noscript">Enable JavaScript to explore this model.</p></noscript>
                 </div>
               </div>
 
               <div class="asset-card__content">
                 <h3 class="asset-card__title">Faucet</h3>
                 <div class="asset-card__prompt">
-                  <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Joint controls</p>
-                  <div data-urdf-joints><p>Loading joints...</p></div>
-                </div>
-                <div class="asset-card__footer">
-                  <a href="static/resources/articulation/faucet/faucet.urdf" download>Download URDF <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+                  <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Move the joints</p>
+                  <div data-urdf-joints><p>Preparing controls…</p></div>
                 </div>
               </div>
             </article>
@@ -397,7 +371,7 @@
                 <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a CNC machine. Drag to rotate and scroll to zoom.">
                   <div class="asset-viewer__status" data-viewer-status role="status">
                     <span class="asset-viewer__spinner" aria-hidden="true"></span>
-                    <span>Loading URDF asset</span>
+                    <span>Loading model…</span>
                   </div>
                   <div class="asset-viewer__hint" data-viewer-hint>
                     <i class="fas fa-hand-pointer" aria-hidden="true"></i>
@@ -407,18 +381,15 @@
                     <i class="fas fa-undo" aria-hidden="true"></i>
                     <span>Reset view</span>
                   </button>
-                  <noscript><p class="asset-viewer__noscript">Enable JavaScript to explore this URDF asset.</p></noscript>
+                  <noscript><p class="asset-viewer__noscript">Enable JavaScript to explore this model.</p></noscript>
                 </div>
               </div>
 
               <div class="asset-card__content">
                 <h3 class="asset-card__title">CNC Machine</h3>
                 <div class="asset-card__prompt">
-                  <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Joint controls</p>
-                  <div data-urdf-joints><p>Loading joints...</p></div>
-                </div>
-                <div class="asset-card__footer">
-                  <a href="static/resources/articulation/CNCMachine/CNCMachine.urdf" download>Download URDF <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+                  <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Move the joints</p>
+                  <div data-urdf-joints><p>Preparing controls…</p></div>
                 </div>
               </div>
             </article>
@@ -430,7 +401,7 @@
                 <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a refrigerator. Drag to rotate and scroll to zoom.">
                   <div class="asset-viewer__status" data-viewer-status role="status">
                     <span class="asset-viewer__spinner" aria-hidden="true"></span>
-                    <span>Loading URDF asset</span>
+                    <span>Loading model…</span>
                   </div>
                   <div class="asset-viewer__hint" data-viewer-hint>
                     <i class="fas fa-hand-pointer" aria-hidden="true"></i>
@@ -440,18 +411,15 @@
                     <i class="fas fa-undo" aria-hidden="true"></i>
                     <span>Reset view</span>
                   </button>
-                  <noscript><p class="asset-viewer__noscript">Enable JavaScript to explore this URDF asset.</p></noscript>
+                  <noscript><p class="asset-viewer__noscript">Enable JavaScript to explore this model.</p></noscript>
                 </div>
               </div>
 
               <div class="asset-card__content">
                 <h3 class="asset-card__title">Refrigerator</h3>
                 <div class="asset-card__prompt">
-                  <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Joint controls</p>
-                  <div data-urdf-joints><p>Loading joints...</p></div>
-                </div>
-                <div class="asset-card__footer">
-                  <a href="static/resources/articulation/fridge/fridge.urdf" download>Download URDF <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+                  <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Move the joints</p>
+                  <div data-urdf-joints><p>Preparing controls…</p></div>
                 </div>
               </div>
             </article>
@@ -463,7 +431,7 @@
                 <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a robot. Drag to rotate and scroll to zoom.">
                   <div class="asset-viewer__status" data-viewer-status role="status">
                     <span class="asset-viewer__spinner" aria-hidden="true"></span>
-                    <span>Loading URDF asset</span>
+                    <span>Loading model…</span>
                   </div>
                   <div class="asset-viewer__hint" data-viewer-hint>
                     <i class="fas fa-hand-pointer" aria-hidden="true"></i>
@@ -473,18 +441,15 @@
                     <i class="fas fa-undo" aria-hidden="true"></i>
                     <span>Reset view</span>
                   </button>
-                  <noscript><p class="asset-viewer__noscript">Enable JavaScript to explore this URDF asset.</p></noscript>
+                  <noscript><p class="asset-viewer__noscript">Enable JavaScript to explore this model.</p></noscript>
                 </div>
               </div>
 
               <div class="asset-card__content">
                 <h3 class="asset-card__title">Robot</h3>
                 <div class="asset-card__prompt">
-                  <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Joint controls</p>
-                  <div data-urdf-joints><p>Loading joints...</p></div>
-                </div>
-                <div class="asset-card__footer">
-                  <a href="static/resources/articulation/robot/robot.urdf" download>Download URDF <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+                  <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Move the joints</p>
+                  <div data-urdf-joints><p>Preparing controls…</p></div>
                 </div>
               </div>
             </article>
@@ -497,10 +462,30 @@
       </div>
     </section>
 
+    <!-- Method -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Method</h2>
+            <figure class="research-figure method-dsl-figure">
+              <img src="static/assets/dsl.png" alt="Overview of aDSL showing primitives, Boolean operations, hierarchical composition, spatial reasoning, component fabrication, and global assembly" loading="lazy">
+              <figcaption class="figure-caption content has-text-justified">aDSL gives agents an editable 3D representation built around parts, relations, and constraints instead of relying on fragile absolute coordinates.</figcaption>
+            </figure>
+
+            <figure class="research-figure method-agent-figure">
+              <img src="static/assets/agent.png" alt="aDSL agent workflow from user input through Planner, Coder, Executor, Debugger, and Critic to an approved 3D asset" loading="lazy">
+              <figcaption class="figure-caption content has-text-justified">Specialized agents turn text or images into aDSL programs, execute them, and iteratively fix failures or violated constraints.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-muted" aria-labelledby="bibtex-title">
       <div class="container is-max-desktop">
-        <h2 id="bibtex-title" class="title is-3 has-text-centered">BibTeX</h2>
-        <pre><code>@article{wang2026adsl,
+        <h2 id="bibtex-title" class="title is-3 has-text-centered">Citation</h2>
+        <pre class="bibtex-block"><code>@article{wang2026adsl,
   title   = {aDSL: Agentic 3D Creation via Joint Agent-Program Design},
   author  = {Wang, Rui-Huan and Wei, Si-Tong and He, Jia-Qi and Wei, Heng-Yi and Chen, Baoquan and Wang, Peng-Shuai},
   journal = {arXiv preprint arXiv:2608.17975},
@@ -516,7 +501,7 @@
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
-            <p>This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>, adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a> project page.</p>
+            <p>Built on the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>.</p>
           </div>
         </div>
       </div>

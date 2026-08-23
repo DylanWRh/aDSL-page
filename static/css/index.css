@@ -375,6 +375,13 @@ pre {
   box-shadow: var(--shadow-sm);
 }
 
+.bibtex-block {
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 code {
   background: var(--background-accent) !important;
   color: var(--text-primary) !important;
