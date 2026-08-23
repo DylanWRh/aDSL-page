@@ -218,6 +218,39 @@
               </div>
             </figure>
 
+            <figure class="research-figure comparison-case" data-results-slide role="group" aria-roledescription="slide" aria-label="Workshop" hidden>
+              <div
+                class="model-comparison"
+                data-model-comparison
+                data-before-model="static/resources/high-fidelity-scene/workshop-1.glb"
+                data-after-model="static/resources/high-fidelity-scene/workshop-2.glb"
+                role="group"
+                aria-label="Interactive comparison of the original workshop scene and its high-fidelity replacement"
+              >
+                <canvas data-comparison-canvas aria-hidden="true"></canvas>
+                <span class="model-comparison__label model-comparison__label--before">aDSL scaffold</span>
+                <span class="model-comparison__label model-comparison__label--after">Detail-enhanced result</span>
+                <div
+                  class="model-comparison__divider"
+                  data-comparison-divider
+                >
+                  <span class="model-comparison__handle" aria-hidden="true"><i class="fas fa-arrows-alt-h"></i></span>
+                </div>
+                <div class="asset-viewer__status" data-comparison-status role="status">
+                  <span class="asset-viewer__spinner" aria-hidden="true"></span>
+                  <span>Loading model…</span>
+                </div>
+                <div class="asset-viewer__hint" data-comparison-hint>
+                  <i class="fas fa-hand-pointer" aria-hidden="true"></i>
+                  <span>Drag to rotate <span aria-hidden="true">&middot;</span> Scroll to zoom</span>
+                </div>
+                <button class="asset-viewer__reset" data-comparison-reset type="button" aria-label="Reset workshop comparison view">
+                  <i class="fas fa-undo" aria-hidden="true"></i>
+                  <span>Reset view</span>
+                </button>
+              </div>
+            </figure>
+
             <figure class="research-figure comparison-case" data-results-slide role="group" aria-roledescription="slide" aria-label="Living room" hidden>
               <div
                 class="model-comparison"
@@ -387,6 +420,36 @@
 
               <div class="asset-card__content">
                 <h3 class="asset-card__title">CNC Machine</h3>
+                <div class="asset-card__prompt">
+                  <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Move the joints</p>
+                  <div data-urdf-joints><p>Preparing controls…</p></div>
+                </div>
+              </div>
+            </article>
+            </div>
+
+            <div data-results-slide role="group" aria-roledescription="slide" aria-label="Toolbox" hidden>
+            <article class="asset-card" data-urdf-card data-urdf-src="static/resources/articulation/toolbox/scene.urdf">
+              <div class="asset-card__viewer">
+                <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a toolbox. Drag to rotate and scroll to zoom.">
+                  <div class="asset-viewer__status" data-viewer-status role="status">
+                    <span class="asset-viewer__spinner" aria-hidden="true"></span>
+                    <span>Loading model…</span>
+                  </div>
+                  <div class="asset-viewer__hint" data-viewer-hint>
+                    <i class="fas fa-hand-pointer" aria-hidden="true"></i>
+                    <span>Drag to rotate <span aria-hidden="true">&middot;</span> Scroll to zoom</span>
+                  </div>
+                  <button class="asset-viewer__reset" data-viewer-reset type="button" aria-label="Reset toolbox view">
+                    <i class="fas fa-undo" aria-hidden="true"></i>
+                    <span>Reset view</span>
+                  </button>
+                  <noscript><p class="asset-viewer__noscript">Enable JavaScript to explore this model.</p></noscript>
+                </div>
+              </div>
+
+              <div class="asset-card__content">
+                <h3 class="asset-card__title">Toolbox</h3>
                 <div class="asset-card__prompt">
                   <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Move the joints</p>
                   <div data-urdf-joints><p>Preparing controls…</p></div>

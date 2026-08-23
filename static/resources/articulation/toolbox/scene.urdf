@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+<robot name="Toolbox">
+  <material name="mat_Toolbox">
+    <color rgba="0.1 0.25 0.5 1"/>
+  </material>
+  <material name="mat_Drawer_sockets">
+    <color rgba="0.2 0.2 0.2 1"/>
+  </material>
+  <material name="mat_Drawer_screwdrivers">
+    <color rgba="0.2 0.2 0.2 1"/>
+  </material>
+  <material name="mat_Drawer_wrench">
+    <color rgba="0.2 0.2 0.2 1"/>
+  </material>
+  <material name="mat_TopLid">
+    <color rgba="0.1 0.1 0.1 1"/>
+  </material>
+  <link name="Toolbox">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Toolbox.glb"/>
+      </geometry>
+      <material name="mat_Toolbox">
+        <color rgba="0.1 0.25 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Toolbox.glb"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Drawer_sockets">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Drawer_sockets.glb"/>
+      </geometry>
+      <material name="mat_Drawer_sockets">
+        <color rgba="0.2 0.2 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Drawer_sockets.glb"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Drawer_screwdrivers">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Drawer_screwdrivers.glb"/>
+      </geometry>
+      <material name="mat_Drawer_screwdrivers">
+        <color rgba="0.2 0.2 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Drawer_screwdrivers.glb"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Drawer_wrench">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Drawer_wrench.glb"/>
+      </geometry>
+      <material name="mat_Drawer_wrench">
+        <color rgba="0.2 0.2 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+      <geometry>
+        <mesh filename="meshes/Drawer_wrench.glb"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="TopLid">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+      <geometry>
+        <mesh filename="meshes/TopLid.glb"/>
+      </geometry>
+      <material name="mat_TopLid">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+      <geometry>
+        <mesh filename="meshes/TopLid.glb"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="drawer_top" type="prismatic">
+    <parent link="Toolbox"/>
+    <child link="Drawer_sockets"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.3"/>
+  </joint>
+  <joint name="drawer_middle" type="prismatic">
+    <parent link="Toolbox"/>
+    <child link="Drawer_screwdrivers"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.3"/>
+  </joint>
+  <joint name="drawer_bottom" type="prismatic">
+    <parent link="Toolbox"/>
+    <child link="Drawer_wrench"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.3"/>
+  </joint>
+  <joint name="top_lid" type="revolute">
+    <parent link="Toolbox"/>
+    <child link="TopLid"/>
+    <origin xyz="0 0.2 0.225" rpy="0 -0 0"/>
+    <axis xyz="-1 0 0"/>
+    <limit lower="0" upper="2"/>
+  </joint>
+</robot>
