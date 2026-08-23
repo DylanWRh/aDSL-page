@@ -13,6 +13,45 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', updateScrollButton, { passive: true });
   updateScrollButton();
 
+  document.querySelectorAll('[data-editing-carousel]').forEach(function (carousel) {
+    var slides = Array.prototype.slice.call(carousel.querySelectorAll('[data-editing-slide]'));
+    var previousButton = carousel.querySelector('[data-editing-previous]');
+    var nextButton = carousel.querySelector('[data-editing-next]');
+    var currentIndex = 0;
+
+    if (slides.length < 2 || !previousButton || !nextButton) return;
+
+    function showSlide(nextIndex) {
+      currentIndex = (nextIndex + slides.length) % slides.length;
+      slides.forEach(function (slide, index) {
+        var isCurrent = index === currentIndex;
+        slide.classList.toggle('is-active', isCurrent);
+        slide.hidden = !isCurrent;
+        slide.setAttribute('aria-hidden', String(!isCurrent));
+      });
+    }
+
+    previousButton.addEventListener('click', function () {
+      showSlide(currentIndex - 1);
+    });
+
+    nextButton.addEventListener('click', function () {
+      showSlide(currentIndex + 1);
+    });
+
+    carousel.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        showSlide(currentIndex - 1);
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        showSlide(currentIndex + 1);
+      }
+    });
+
+    showSlide(0);
+  });
+
   var autoplayVideos = document.querySelectorAll('video[data-autoplay]');
   if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     autoplayVideos.forEach(function (video) { video.pause(); });

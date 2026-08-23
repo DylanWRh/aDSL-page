@@ -25,10 +25,20 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/index.css?v=20260824-6">
 
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/index.js"></script>
+  <script defer src="static/js/index.js?v=20260824-3"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="static/js/asset-viewer.js"></script>
+  <script type="module" src="static/js/model-comparison.js?v=20260824-4"></script>
 </head>
 <body>
   <button id="scroll-to-top" class="scroll-to-top" type="button" title="Scroll to top" aria-label="Scroll to top">
@@ -79,6 +89,7 @@
       </div>
     </section>
 
+    <!-- Abstract -->
     <section class="section section-muted">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
@@ -89,6 +100,286 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Method -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Method</h2>
+            <div class="content has-text-justified method-copy">
+              <p>aDSL gives 3D agents a compact vocabulary for constructing editable assets. It combines geometric primitives and Boolean operations with hierarchical composition and spatial-reasoning operators, allowing complex components to be fabricated locally and assembled through semantic relationships.</p>
+            </div>
+            <figure class="research-figure method-dsl-figure">
+              <img src="static/assets/dsl.png" alt="Overview of aDSL showing primitives, Boolean operations, hierarchical composition, spatial reasoning, component fabrication, and global assembly" loading="lazy">
+              <figcaption class="figure-caption content has-text-justified"><strong>aDSL design.</strong> (a) Four core abstractions provide primitives, Boolean operations, hierarchical composition, and spatial reasoning. (b) Components are fabricated through constructive geometry and reusable part hierarchies. (c) Semantic classes and relational layout constraints assemble those components into complete, editable 3D assets.</figcaption>
+            </figure>
+
+            <div class="method-agent-copy content has-text-justified">
+              <h3>Role-specialized agent system</h3>
+              <p>The agent system turns a text or image request into an executable aDSL program through a self-correcting workflow. A planner derives structure and constraints, a coder synthesizes the program, and an executor produces the asset. Execution failures are repaired by the debugger, while the critic checks semantic and geometric fidelity before approving the final result or returning targeted feedback.</p>
+            </div>
+            <figure class="research-figure method-agent-figure">
+              <img src="static/assets/agent.png" alt="aDSL agent workflow from user input through Planner, Coder, Executor, Debugger, and Critic to an approved 3D asset" loading="lazy">
+              <figcaption class="figure-caption content has-text-justified"><strong>Agent system.</strong> The role-specialized workflow follows a Plan–Execute–Critic loop. Structured plans and constraints guide code generation; execution feedback triggers debugger repairs; and critic feedback iteratively refines the program until the generated 3D asset is approved.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" aria-labelledby="qualitative-results-title">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 id="qualitative-results-title" class="title is-3">Qualitative Results</h2>
+
+            <figure class="research-figure">
+              <img src="static/assets/text2shape.png" alt="Text-to-shape comparisons across Trellis, BlenderLLM, LlamaMesh, BlenderMCP, ShapeCraft, IL3M, Scene Language, and aDSL on bookshelf, office desk, and chair prompts" loading="lazy">
+              <figcaption class="figure-caption content has-text-justified"><strong>Text-to-shape results.</strong> Across furniture with detailed structural, material, and spatial requirements, aDSL produces complete assets that closely reflect the described parts and their relationships.</figcaption>
+            </figure>
+
+            <figure class="research-figure">
+              <img src="static/assets/image2shape.png" alt="Image-to-shape comparisons across Trellis, LN3Diff, Direct3D-S2, ShapeCraft, Scene Language, and aDSL on bicycle and vehicle reference images" loading="lazy">
+              <figcaption class="figure-caption content has-text-justified"><strong>Image-to-shape results.</strong> Given a single reference image, aDSL preserves recognizable object structure, part layout, and color while retaining a programmatic representation that can be inspected and edited.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="shape-editing-title">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 id="shape-editing-title" class="title is-3">Shape Editing</h2>
+            <div class="editing-carousel" data-editing-carousel tabindex="0" role="region" aria-roledescription="carousel" aria-labelledby="shape-editing-title">
+              <div class="editing-carousel__viewport">
+                <figure class="research-figure editing-example is-active" data-editing-slide role="group" aria-roledescription="slide" aria-label="Primitive substitution">
+                  <img src="static/assets/edit-1.png" alt="A rectangular sink edited into a rounded sink by changing the inner and outer primitives from cubes to cylinders" loading="lazy">
+                  <figcaption class="figure-caption content has-text-centered"><strong>Primitive substitution</strong></figcaption>
+                </figure>
+
+                <figure class="research-figure editing-example" data-editing-slide role="group" aria-roledescription="slide" aria-label="Instance count" hidden>
+                  <img src="static/assets/edit-2.png" alt="A dining-table set edited from four chairs to six chairs by changing the chair-count parameter" loading="lazy">
+                  <figcaption class="figure-caption content has-text-centered"><strong>Instance count</strong></figcaption>
+                </figure>
+
+                <figure class="research-figure editing-example" data-editing-slide role="group" aria-roledescription="slide" aria-label="Spatial refinement" hidden>
+                  <img src="static/assets/edit-3.png" alt="A woven rod structure made denser by reducing its rod-spacing parameter from 0.2 to 0.1" loading="lazy">
+                  <figcaption class="figure-caption content has-text-centered"><strong>Spatial refinement</strong></figcaption>
+                </figure>
+              </div>
+
+              <button class="editing-carousel__arrow editing-carousel__arrow--previous" data-editing-previous type="button" aria-label="Show previous editing case"><i class="fas fa-angle-left" aria-hidden="true"></i></button>
+              <button class="editing-carousel__arrow editing-carousel__arrow--next" data-editing-next type="button" aria-label="Show next editing case"><i class="fas fa-angle-right" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" aria-labelledby="high-fidelity-replacement-title">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 id="high-fidelity-replacement-title" class="title is-3">High-Fidelity Replacement</h2>
+            <h3 class="title is-4">Object-Level Replacement</h3>
+            <figure class="research-figure">
+              <div
+                class="model-comparison"
+                data-model-comparison
+                data-before-model="static/resources/high-fidelity-object/piano-1.glb"
+                data-after-model="static/resources/high-fidelity-object/piano-2.glb"
+                role="group"
+                aria-label="Interactive comparison of the original piano and its high-fidelity replacement"
+              >
+                <canvas data-comparison-canvas aria-hidden="true"></canvas>
+                <span class="model-comparison__label model-comparison__label--before">Original</span>
+                <span class="model-comparison__label model-comparison__label--after">High-fidelity replacement</span>
+                <div
+                  class="model-comparison__divider"
+                  data-comparison-divider
+                  role="slider"
+                  tabindex="0"
+                  aria-label="Before and after comparison position"
+                  aria-orientation="horizontal"
+                  aria-valuemin="2"
+                  aria-valuemax="98"
+                  aria-valuenow="50"
+                >
+                  <span class="model-comparison__handle" aria-hidden="true"><i class="fas fa-arrows-alt-h"></i></span>
+                </div>
+                <div class="asset-viewer__status" data-comparison-status role="status">
+                  <span class="asset-viewer__spinner" aria-hidden="true"></span>
+                  <span>Loading comparison</span>
+                </div>
+              </div>
+              <figcaption class="figure-caption content has-text-centered"><strong>Upright piano.</strong> Drag the divider to compare the original aDSL object with its high-fidelity replacement. Drag elsewhere to rotate, and scroll to zoom.</figcaption>
+            </figure>
+
+            <figure class="research-figure">
+              <div
+                class="model-comparison"
+                data-model-comparison
+                data-before-model="static/resources/high-fidelity-object/sofa-1.glb"
+                data-after-model="static/resources/high-fidelity-object/sofa-2.glb"
+                role="group"
+                aria-label="Interactive comparison of the original sofa and its high-fidelity replacement"
+              >
+                <canvas data-comparison-canvas aria-hidden="true"></canvas>
+                <span class="model-comparison__label model-comparison__label--before">Original</span>
+                <span class="model-comparison__label model-comparison__label--after">High-fidelity replacement</span>
+                <div
+                  class="model-comparison__divider"
+                  data-comparison-divider
+                  role="slider"
+                  tabindex="0"
+                  aria-label="Before and after comparison position"
+                  aria-orientation="horizontal"
+                  aria-valuemin="2"
+                  aria-valuemax="98"
+                  aria-valuenow="50"
+                >
+                  <span class="model-comparison__handle" aria-hidden="true"><i class="fas fa-arrows-alt-h"></i></span>
+                </div>
+                <div class="asset-viewer__status" data-comparison-status role="status">
+                  <span class="asset-viewer__spinner" aria-hidden="true"></span>
+                  <span>Loading comparison</span>
+                </div>
+              </div>
+              <figcaption class="figure-caption content has-text-centered"><strong>Sofa.</strong> Drag the divider to compare the original aDSL object with its high-fidelity replacement. Drag elsewhere to rotate, and scroll to zoom.</figcaption>
+            </figure>
+
+            <h3 class="title is-4">Scene-Level Replacement</h3>
+            <figure class="research-figure">
+              <div
+                class="model-comparison"
+                data-model-comparison
+                data-before-model="static/resources/high-fidelity-scene/kitchen-1.glb"
+                data-after-model="static/resources/high-fidelity-scene/kitchen-2.glb"
+                role="group"
+                aria-label="Interactive comparison of the original kitchen scene and its high-fidelity replacement"
+              >
+                <canvas data-comparison-canvas aria-hidden="true"></canvas>
+                <span class="model-comparison__label model-comparison__label--before">Original</span>
+                <span class="model-comparison__label model-comparison__label--after">High-fidelity replacement</span>
+                <div
+                  class="model-comparison__divider"
+                  data-comparison-divider
+                  role="slider"
+                  tabindex="0"
+                  aria-label="Before and after comparison position"
+                  aria-orientation="horizontal"
+                  aria-valuemin="2"
+                  aria-valuemax="98"
+                  aria-valuenow="50"
+                >
+                  <span class="model-comparison__handle" aria-hidden="true"><i class="fas fa-arrows-alt-h"></i></span>
+                </div>
+                <div class="asset-viewer__status" data-comparison-status role="status">
+                  <span class="asset-viewer__spinner" aria-hidden="true"></span>
+                  <span>Loading comparison</span>
+                </div>
+              </div>
+              <figcaption class="figure-caption content has-text-centered"><strong>Kitchen.</strong> Drag the divider to compare the original aDSL scene with its high-fidelity replacement. Drag elsewhere to rotate, and scroll to zoom.</figcaption>
+            </figure>
+
+            <figure class="research-figure">
+              <div
+                class="model-comparison"
+                data-model-comparison
+                data-before-model="static/resources/high-fidelity-scene/living-room-1.glb"
+                data-after-model="static/resources/high-fidelity-scene/living-room-2.glb"
+                role="group"
+                aria-label="Interactive comparison of the original living room scene and its high-fidelity replacement"
+              >
+                <canvas data-comparison-canvas aria-hidden="true"></canvas>
+                <span class="model-comparison__label model-comparison__label--before">Original</span>
+                <span class="model-comparison__label model-comparison__label--after">High-fidelity replacement</span>
+                <div
+                  class="model-comparison__divider"
+                  data-comparison-divider
+                  role="slider"
+                  tabindex="0"
+                  aria-label="Before and after comparison position"
+                  aria-orientation="horizontal"
+                  aria-valuemin="2"
+                  aria-valuemax="98"
+                  aria-valuenow="50"
+                >
+                  <span class="model-comparison__handle" aria-hidden="true"><i class="fas fa-arrows-alt-h"></i></span>
+                </div>
+                <div class="asset-viewer__status" data-comparison-status role="status">
+                  <span class="asset-viewer__spinner" aria-hidden="true"></span>
+                  <span>Loading comparison</span>
+                </div>
+              </div>
+              <figcaption class="figure-caption content has-text-centered"><strong>Living room.</strong> Drag the divider to compare the original aDSL scene with its high-fidelity replacement. Drag elsewhere to rotate, and scroll to zoom.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section asset-showcase" aria-labelledby="interactive-results-title">
+      <div class="container is-max-desktop">
+        <div class="asset-showcase__header has-text-centered">
+          <p class="asset-showcase__eyebrow">Generated with aDSL</p>
+          <h2 id="interactive-results-title" class="title is-3">Interactive 3D Results</h2>
+          <p class="asset-showcase__intro">Explore the generated asset alongside the text prompt that produced it.</p>
+        </div>
+
+        <!-- Duplicate this article and update the two data paths to add another result. -->
+        <article class="asset-card" data-asset-card data-model-src="static/resources/text2shape/scene.glb" data-prompt-src="static/resources/text2shape/prompt.txt">
+          <div class="asset-card__viewer">
+            <div class="asset-viewer" data-viewer tabindex="0" role="group" aria-label="Interactive 3D model of an office chair. Drag to rotate and scroll to zoom.">
+              <div class="asset-viewer__status" data-viewer-status role="status">
+                <span class="asset-viewer__spinner" aria-hidden="true"></span>
+                <span>Loading 3D asset</span>
+              </div>
+              <div class="asset-viewer__hint" data-viewer-hint>
+                <i class="fas fa-hand-pointer" aria-hidden="true"></i>
+                <span>Drag to rotate <span aria-hidden="true">&middot;</span> Scroll to zoom</span>
+              </div>
+              <button class="asset-viewer__reset" data-viewer-reset type="button" aria-label="Reset 3D view">
+                <i class="fas fa-undo" aria-hidden="true"></i>
+                <span>Reset view</span>
+              </button>
+              <noscript><p class="asset-viewer__noscript">Enable JavaScript to explore this 3D asset.</p></noscript>
+            </div>
+          </div>
+
+          <div class="asset-card__content">
+            <div class="asset-card__meta">
+              <span class="asset-card__tag">Text to shape</span>
+              <span class="asset-card__format">GLB</span>
+            </div>
+            <h3 class="asset-card__title">Office Chair</h3>
+            <div class="asset-card__prompt">
+              <p class="asset-card__prompt-label"><i class="fas fa-quote-left" aria-hidden="true"></i> Text prompt</p>
+              <p data-prompt-text>An ergonomic office chair with a cushioned seat and backrest, two armrests, a central lift, and a five-wheel base.</p>
+            </div>
+            <div class="asset-card__footer">
+              <span><i class="fas fa-cube" aria-hidden="true"></i> Structured 3D asset</span>
+              <a href="static/resources/text2shape/scene.glb" download>Download GLB <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-muted" aria-labelledby="bibtex-title">
+      <div class="container is-max-desktop">
+        <h2 id="bibtex-title" class="title is-3 has-text-centered">BibTeX</h2>
+        <pre><code>@article{wang2026adsl,
+  title   = {aDSL: Agentic 3D Creation via Joint Agent-Program Design},
+  author  = {Wang, Rui-Huan and Wei, Si-Tong and He, Jia-Qi and Wei, Heng-Yi and Chen, Baoquan and Wang, Peng-Shuai},
+  journal = {arXiv preprint arXiv:2608.17975},
+  year    = {2026}
+}</code></pre>
       </div>
     </section>
 
