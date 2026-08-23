@@ -104,7 +104,7 @@ body {
 }
 
 .teaser .hero-body {
-  padding-top: 2rem;
+  padding-top: 0.5em;
   padding-bottom: 4rem;
 }
 
@@ -142,7 +142,7 @@ body {
 }
 
 .publication-header .hero-body {
-  padding: 6rem 1.5rem 4rem;
+  padding: 6rem 1.5rem 0.5em;
 }
 
 .publication-authors {
@@ -612,7 +612,7 @@ code {
   }
   
   .publication-header .hero-body {
-    padding: 3rem 1rem 2rem;
+    padding: 3rem 1rem 0.5em;
   }
   
   .publication-title {
@@ -655,7 +655,7 @@ code {
   }
   
   .teaser .hero-body {
-    padding: 1rem;
+    padding: 0.5em 1rem 1rem;
   }
   
   .content.has-text-justified {
@@ -710,7 +710,7 @@ code {
   }
   
   .publication-header .hero-body {
-    padding: 4rem 2rem 3rem;
+    padding: 4rem 2rem 0.5em;
   }
 }
 
