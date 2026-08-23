@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css?v=20260824-8">
+  <link rel="stylesheet" href="static/css/index.css?v=20260824-10">
 
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/index.js?v=20260824-5"></script>
@@ -87,6 +87,19 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser" aria-label="aDSL overview video">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <figure class="publication-banner">
+            <video data-autoplay autoplay muted loop playsinline controls preload="metadata" aria-label="aDSL project overview video">
+              <source src="static/assets/video_new.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="static/assets/video_new.mp4">Download the video</a>.
+            </video>
+          </figure>
         </div>
       </div>
     </section>
@@ -345,7 +358,8 @@
 
         <div class="editing-carousel" data-results-carousel role="region" aria-roledescription="carousel" aria-labelledby="interactive-results-title">
           <div class="editing-carousel__viewport">
-            <article class="asset-card is-active" data-results-slide data-urdf-card data-urdf-src="static/resources/articulation/faucet/faucet.urdf" role="group" aria-roledescription="slide" aria-label="Bathroom faucet">
+            <div class="is-active" data-results-slide role="group" aria-roledescription="slide" aria-label="Bathroom faucet">
+            <article class="asset-card" data-urdf-card data-urdf-src="static/resources/articulation/faucet/faucet.urdf">
               <div class="asset-card__viewer">
                 <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a bathroom faucet. Drag to rotate and scroll to zoom.">
                   <div class="asset-viewer__status" data-viewer-status role="status">
@@ -375,8 +389,10 @@
                 </div>
               </div>
             </article>
+            </div>
 
-            <article class="asset-card" data-results-slide data-urdf-card data-urdf-src="static/resources/articulation/CNCMachine/CNCMachine.urdf" role="group" aria-roledescription="slide" aria-label="CNC machine" hidden>
+            <div data-results-slide role="group" aria-roledescription="slide" aria-label="CNC machine" hidden>
+            <article class="asset-card" data-urdf-card data-urdf-src="static/resources/articulation/CNCMachine/CNCMachine.urdf">
               <div class="asset-card__viewer">
                 <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a CNC machine. Drag to rotate and scroll to zoom.">
                   <div class="asset-viewer__status" data-viewer-status role="status">
@@ -406,6 +422,73 @@
                 </div>
               </div>
             </article>
+            </div>
+
+            <div data-results-slide role="group" aria-roledescription="slide" aria-label="French-door refrigerator" hidden>
+            <article class="asset-card" data-urdf-card data-urdf-src="static/resources/articulation/fridge/fridge.urdf">
+              <div class="asset-card__viewer">
+                <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a French-door refrigerator. Drag to rotate and scroll to zoom.">
+                  <div class="asset-viewer__status" data-viewer-status role="status">
+                    <span class="asset-viewer__spinner" aria-hidden="true"></span>
+                    <span>Loading URDF asset</span>
+                  </div>
+                  <div class="asset-viewer__hint" data-viewer-hint>
+                    <i class="fas fa-hand-pointer" aria-hidden="true"></i>
+                    <span>Drag to rotate <span aria-hidden="true">&middot;</span> Scroll to zoom</span>
+                  </div>
+                  <button class="asset-viewer__reset" data-viewer-reset type="button" aria-label="Reset refrigerator view">
+                    <i class="fas fa-undo" aria-hidden="true"></i>
+                    <span>Reset view</span>
+                  </button>
+                  <noscript><p class="asset-viewer__noscript">Enable JavaScript to explore this URDF asset.</p></noscript>
+                </div>
+              </div>
+
+              <div class="asset-card__content">
+                <h3 class="asset-card__title">French-door Refrigerator</h3>
+                <div class="asset-card__prompt">
+                  <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Joint controls</p>
+                  <div data-urdf-joints><p>Loading joints...</p></div>
+                </div>
+                <div class="asset-card__footer">
+                  <a href="static/resources/articulation/fridge/fridge.urdf" download>Download URDF <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </article>
+            </div>
+
+            <div data-results-slide role="group" aria-roledescription="slide" aria-label="Robot" hidden>
+            <article class="asset-card" data-urdf-card data-urdf-src="static/resources/articulation/robot/robot.urdf">
+              <div class="asset-card__viewer">
+                <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a robot. Drag to rotate and scroll to zoom.">
+                  <div class="asset-viewer__status" data-viewer-status role="status">
+                    <span class="asset-viewer__spinner" aria-hidden="true"></span>
+                    <span>Loading URDF asset</span>
+                  </div>
+                  <div class="asset-viewer__hint" data-viewer-hint>
+                    <i class="fas fa-hand-pointer" aria-hidden="true"></i>
+                    <span>Drag to rotate <span aria-hidden="true">&middot;</span> Scroll to zoom</span>
+                  </div>
+                  <button class="asset-viewer__reset" data-viewer-reset type="button" aria-label="Reset robot view">
+                    <i class="fas fa-undo" aria-hidden="true"></i>
+                    <span>Reset view</span>
+                  </button>
+                  <noscript><p class="asset-viewer__noscript">Enable JavaScript to explore this URDF asset.</p></noscript>
+                </div>
+              </div>
+
+              <div class="asset-card__content">
+                <h3 class="asset-card__title">Robot</h3>
+                <div class="asset-card__prompt">
+                  <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Joint controls</p>
+                  <div data-urdf-joints><p>Loading joints...</p></div>
+                </div>
+                <div class="asset-card__footer">
+                  <a href="static/resources/articulation/robot/robot.urdf" download>Download URDF <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </article>
+            </div>
           </div>
 
           <button class="editing-carousel__arrow editing-carousel__arrow--previous" data-results-previous type="button" aria-label="Show previous articulation case"><i class="fas fa-angle-left" aria-hidden="true"></i></button>

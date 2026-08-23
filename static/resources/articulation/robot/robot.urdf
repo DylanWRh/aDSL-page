@@ -1,0 +1,710 @@
+<?xml version="1.0" ?>
+<robot name="robot">
+  <material name="mat_cube_003399ff">
+    <color rgba="0 0.2 0.6 1"/>
+  </material>
+  <material name="mat_cube_262626ff">
+    <color rgba="0.15 0.15 0.15 1"/>
+  </material>
+  <material name="mat_cylinder_262626ff">
+    <color rgba="0.15 0.15 0.15 1"/>
+  </material>
+  <material name="mat_cube_3380e6ff">
+    <color rgba="0.2 0.5 0.9 1"/>
+  </material>
+  <material name="mat_cube_b2b2b2ff">
+    <color rgba="0.7 0.7 0.7 1"/>
+  </material>
+  <material name="mat_cube_0d0d0dff">
+    <color rgba="0.05 0.05 0.05 1"/>
+  </material>
+  <material name="mat_sphere_ffe61aff">
+    <color rgba="1 0.9 0.1 1"/>
+  </material>
+  <material name="mat_cube_ffe61aff">
+    <color rgba="1 0.9 0.1 1"/>
+  </material>
+  <material name="mat_cylinder_b2b2b2ff">
+    <color rgba="0.7 0.7 0.7 1"/>
+  </material>
+  <material name="mat_sphere_262626ff">
+    <color rgba="0.15 0.15 0.15 1"/>
+  </material>
+  <material name="mat_cylinder_e6e6e6ff">
+    <color rgba="0.9 0.9 0.9 1"/>
+  </material>
+  <material name="mat_cylinder_3380e6ff">
+    <color rgba="0.2 0.5 0.9 1"/>
+  </material>
+  <material name="mat_cylinder_003399ff">
+    <color rgba="0 0.2 0.6 1"/>
+  </material>
+  <link name="robot">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.3 0.25 0.4"/>
+      </geometry>
+      <material name="mat_cube_003399ff">
+        <color rgba="0 0.2 0.6 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.3 0.25 0.4"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 -0.18" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.32 0.27 0.05"/>
+      </geometry>
+      <material name="mat_cube_262626ff">
+        <color rgba="0.15 0.15 0.15 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.18" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.32 0.27 0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0.215" rpy="0 -0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.03"/>
+      </geometry>
+      <material name="mat_cylinder_262626ff">
+        <color rgba="0.15 0.15 0.15 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.215" rpy="0 -0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.03"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="head">
+    <visual>
+      <origin xyz="0 0 0.175" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.45 0.3 0.35"/>
+      </geometry>
+      <material name="mat_cube_3380e6ff">
+        <color rgba="0.2 0.5 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.175" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.45 0.3 0.35"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.175 0.175" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.4 0.05 0.3"/>
+      </geometry>
+      <material name="mat_cube_b2b2b2ff">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.175 0.175" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.4 0.05 0.3"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.185 0.175" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.36 0.05 0.26"/>
+      </geometry>
+      <material name="mat_cube_0d0d0dff">
+        <color rgba="0.05 0.05 0.05 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.185 0.175" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.36 0.05 0.26"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.08 -0.21 0.205" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+      <material name="mat_sphere_ffe61aff">
+        <color rgba="1 0.9 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.08 -0.21 0.205" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.08 -0.21 0.205" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+      <material name="mat_sphere_ffe61aff">
+        <color rgba="1 0.9 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.08 -0.21 0.205" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.21 0.117584936" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.04 0.01 0.01"/>
+      </geometry>
+      <material name="mat_cube_ffe61aff">
+        <color rgba="1 0.9 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.21 0.117584936" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.04 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.03 -0.21 0.125584936" rpy="0 0.523598776 0"/>
+      <geometry>
+        <box size="0.03 0.01 0.01"/>
+      </geometry>
+      <material name="mat_cube_ffe61aff">
+        <color rgba="1 0.9 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.03 -0.21 0.125584936" rpy="0 0.523598776 0"/>
+      <geometry>
+        <box size="0.03 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.03 -0.21 0.125584936" rpy="0 -0.523598776 0"/>
+      <geometry>
+        <box size="0.03 0.01 0.01"/>
+      </geometry>
+      <material name="mat_cube_ffe61aff">
+        <color rgba="1 0.9 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.03 -0.21 0.125584936" rpy="0 -0.523598776 0"/>
+      <geometry>
+        <box size="0.03 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.25 0 0.175" rpy="-0 -1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.05"/>
+      </geometry>
+      <material name="mat_cylinder_b2b2b2ff">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.25 0 0.175" rpy="-0 -1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.25 0 0.175" rpy="-0 1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.05"/>
+      </geometry>
+      <material name="mat_cylinder_b2b2b2ff">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.25 0 0.175" rpy="-0 1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.05"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="upper_arm">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <material name="mat_sphere_262626ff">
+        <color rgba="0.15 0.15 0.15 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.125 0 0" rpy="-0 1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.03" length="0.25"/>
+      </geometry>
+      <material name="mat_cylinder_e6e6e6ff">
+        <color rgba="0.9 0.9 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.125 0 0" rpy="-0 1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.03" length="0.25"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="forearm">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.045"/>
+      </geometry>
+      <material name="mat_sphere_262626ff">
+        <color rgba="0.15 0.15 0.15 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.045"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.11 0 0" rpy="-0 1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.22"/>
+      </geometry>
+      <material name="mat_cylinder_3380e6ff">
+        <color rgba="0.2 0.5 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.11 0 0" rpy="-0 1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.22"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.25 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.06 0.06 0.04"/>
+      </geometry>
+      <material name="mat_cube_b2b2b2ff">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.25 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.06 0.06 0.04"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.3 0.02 0.01" rpy="-0 1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.04"/>
+      </geometry>
+      <material name="mat_cylinder_3380e6ff">
+        <color rgba="0.2 0.5 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.3 0.02 0.01" rpy="-0 1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.04"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.3 -0.02 0.01" rpy="-0 1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.04"/>
+      </geometry>
+      <material name="mat_cylinder_3380e6ff">
+        <color rgba="0.2 0.5 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.3 -0.02 0.01" rpy="-0 1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.04"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.3 0 -0.01" rpy="-0 1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.04"/>
+      </geometry>
+      <material name="mat_cylinder_3380e6ff">
+        <color rgba="0.2 0.5 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.3 0 -0.01" rpy="-0 1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="upper_arm_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <material name="mat_sphere_262626ff">
+        <color rgba="0.15 0.15 0.15 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.125 0 0" rpy="-0 -1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.03" length="0.25"/>
+      </geometry>
+      <material name="mat_cylinder_e6e6e6ff">
+        <color rgba="0.9 0.9 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.125 0 0" rpy="-0 -1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.03" length="0.25"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="forearm_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.045"/>
+      </geometry>
+      <material name="mat_sphere_262626ff">
+        <color rgba="0.15 0.15 0.15 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.045"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.11 0 0" rpy="-0 -1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.22"/>
+      </geometry>
+      <material name="mat_cylinder_3380e6ff">
+        <color rgba="0.2 0.5 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.11 0 0" rpy="-0 -1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.22"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.25 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.06 0.06 0.04"/>
+      </geometry>
+      <material name="mat_cube_b2b2b2ff">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.25 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.06 0.06 0.04"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.3 0.02 0.01" rpy="-0 -1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.04"/>
+      </geometry>
+      <material name="mat_cylinder_3380e6ff">
+        <color rgba="0.2 0.5 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.3 0.02 0.01" rpy="-0 -1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.04"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.3 -0.02 0.01" rpy="-0 -1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.04"/>
+      </geometry>
+      <material name="mat_cylinder_3380e6ff">
+        <color rgba="0.2 0.5 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.3 -0.02 0.01" rpy="-0 -1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.04"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.3 0 -0.01" rpy="-0 -1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.04"/>
+      </geometry>
+      <material name="mat_cylinder_3380e6ff">
+        <color rgba="0.2 0.5 0.9 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.3 0 -0.01" rpy="-0 -1.57079633 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="thigh">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.06"/>
+      </geometry>
+      <material name="mat_sphere_262626ff">
+        <color rgba="0.15 0.15 0.15 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.06"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 -0.11" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.035" length="0.22"/>
+      </geometry>
+      <material name="mat_cylinder_003399ff">
+        <color rgba="0 0.2 0.6 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.11" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.035" length="0.22"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lower_leg">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.045"/>
+      </geometry>
+      <material name="mat_sphere_262626ff">
+        <color rgba="0.15 0.15 0.15 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.045"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 -0.11" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.22"/>
+      </geometry>
+      <material name="mat_cylinder_003399ff">
+        <color rgba="0 0.2 0.6 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.11" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.22"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.04 -0.25" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.08 0.15 0.06"/>
+      </geometry>
+      <material name="mat_cube_262626ff">
+        <color rgba="0.15 0.15 0.15 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.04 -0.25" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.08 0.15 0.06"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="thigh_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.06"/>
+      </geometry>
+      <material name="mat_sphere_262626ff">
+        <color rgba="0.15 0.15 0.15 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.06"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 -0.11" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.035" length="0.22"/>
+      </geometry>
+      <material name="mat_cylinder_003399ff">
+        <color rgba="0 0.2 0.6 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.11" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.035" length="0.22"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lower_leg_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.045"/>
+      </geometry>
+      <material name="mat_sphere_262626ff">
+        <color rgba="0.15 0.15 0.15 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <sphere radius="0.045"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 -0.11" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.22"/>
+      </geometry>
+      <material name="mat_cylinder_003399ff">
+        <color rgba="0 0.2 0.6 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.11" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.22"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.04 -0.25" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.08 0.15 0.06"/>
+      </geometry>
+      <material name="mat_cube_262626ff">
+        <color rgba="0.15 0.15 0.15 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.04 -0.25" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.08 0.15 0.06"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="head" type="revolute">
+    <parent link="robot"/>
+    <child link="head"/>
+    <origin xyz="0 0 0.23" rpy="0 -0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.174532925" upper="0.174532925"/>
+  </joint>
+  <joint name="ur" type="revolute">
+    <parent link="robot"/>
+    <child link="upper_arm"/>
+    <origin xyz="0.18 0 0.15" rpy="0 -0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.523598776" upper="1.396263402"/>
+  </joint>
+  <joint name="forearm" type="revolute">
+    <parent link="upper_arm"/>
+    <child link="forearm"/>
+    <origin xyz="0.25 0 0" rpy="0 -0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0" upper="2.094395102"/>
+  </joint>
+  <joint name="ul" type="revolute">
+    <parent link="robot"/>
+    <child link="upper_arm_1"/>
+    <origin xyz="-0.18 0 0.15" rpy="0 -0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.396263402" upper="0.523598776"/>
+  </joint>
+  <joint name="forearm_1" type="revolute">
+    <parent link="upper_arm_1"/>
+    <child link="forearm_1"/>
+    <origin xyz="-0.25 0 0" rpy="0 -0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0" upper="2.094395102"/>
+  </joint>
+  <joint name="tr" type="revolute">
+    <parent link="robot"/>
+    <child link="thigh"/>
+    <origin xyz="0.08 0 -0.24" rpy="0 -0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.570796327" upper="1.570796327"/>
+  </joint>
+  <joint name="lower_leg" type="revolute">
+    <parent link="thigh"/>
+    <child link="lower_leg"/>
+    <origin xyz="0 0 -0.22" rpy="0 -0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="2.094395102"/>
+  </joint>
+  <joint name="tl" type="revolute">
+    <parent link="robot"/>
+    <child link="thigh_1"/>
+    <origin xyz="-0.08 0 -0.24" rpy="0 -0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.570796327" upper="1.570796327"/>
+  </joint>
+  <joint name="lower_leg_1" type="revolute">
+    <parent link="thigh_1"/>
+    <child link="lower_leg_1"/>
+    <origin xyz="0 0 -0.22" rpy="0 -0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="2.094395102"/>
+  </joint>
+</robot>

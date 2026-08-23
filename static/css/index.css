@@ -1158,6 +1158,14 @@ code {
   padding: 2rem;
 }
 
+@media screen and (min-width: 769px) {
+  [data-urdf-card] .asset-card__content {
+    min-height: 0;
+    max-height: 30.5rem;
+    overflow-y: auto;
+  }
+}
+
 .asset-card__meta {
   display: flex;
   align-items: center;
@@ -1235,7 +1243,7 @@ code {
 
 .urdf-joint-control {
   display: block;
-  margin-top: 1rem;
+  margin-top: 0.55rem;
 }
 
 .urdf-joint-control__header {
