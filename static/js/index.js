@@ -21,6 +21,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (slides.length < 2 || !previousButton || !nextButton) return;
 
+    var indicatorContainer = document.createElement('div');
+    indicatorContainer.className = 'editing-carousel__indicators';
+    indicatorContainer.setAttribute('role', 'group');
+    indicatorContainer.setAttribute('aria-label', 'Select a case');
+
+    var indicatorButtons = slides.map(function (_, index) {
+      var button = document.createElement('button');
+      button.className = 'editing-carousel__indicator';
+      button.type = 'button';
+      button.setAttribute('aria-label', 'Show case ' + (index + 1) + ' of ' + slides.length);
+      button.addEventListener('click', function () {
+        showSlide(index);
+      });
+      indicatorContainer.appendChild(button);
+      return button;
+    });
+
+    carousel.appendChild(indicatorContainer);
+
     function showSlide(nextIndex) {
       currentIndex = (nextIndex + slides.length) % slides.length;
       slides.forEach(function (slide, index) {
@@ -28,6 +47,12 @@ document.addEventListener('DOMContentLoaded', function () {
         slide.classList.toggle('is-active', isCurrent);
         slide.hidden = !isCurrent;
         slide.setAttribute('aria-hidden', String(!isCurrent));
+      });
+      indicatorButtons.forEach(function (button, index) {
+        var isCurrent = index === currentIndex;
+        button.classList.toggle('is-active', isCurrent);
+        if (isCurrent) button.setAttribute('aria-current', 'true');
+        else button.removeAttribute('aria-current');
       });
     }
 

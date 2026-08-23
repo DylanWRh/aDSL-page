@@ -677,7 +677,7 @@
     <child link="forearm_1"/>
     <origin xyz="-0.25 0 0" rpy="0 -0 0"/>
     <axis xyz="0 1 0"/>
-    <limit lower="0" upper="2.094395102"/>
+    <limit lower="-2.094395102" upper="0"/>
   </joint>
   <joint name="tr" type="revolute">
     <parent link="robot"/>

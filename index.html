@@ -25,10 +25,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css?v=20260824-10">
+  <link rel="stylesheet" href="static/css/index.css?v=20260824-19">
 
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/index.js?v=20260824-5"></script>
+  <script defer src="static/js/index.js?v=20260824-6"></script>
   <script type="importmap">
     {
       "imports": {
@@ -171,19 +171,25 @@
           <div class="column is-full-width">
             <h2 id="shape-editing-title" class="title is-3">Shape Editing</h2>
             <div class="editing-carousel" data-results-carousel role="region" aria-roledescription="carousel" aria-labelledby="shape-editing-title">
-              <div class="editing-carousel__viewport">
+              <div class="editing-carousel__viewport editing-carousel__viewport--shape-editing">
                 <figure class="research-figure editing-example is-active" data-results-slide role="group" aria-roledescription="slide" aria-label="Primitive substitution">
-                  <img src="static/assets/edit-1.png" alt="A rectangular sink edited into a rounded sink by changing the inner and outer primitives from cubes to cylinders" loading="lazy">
+                  <div class="editing-example__image-frame">
+                    <img src="static/assets/edit-1.png" alt="A rectangular sink edited into a rounded sink by changing the inner and outer primitives from cubes to cylinders" width="961" height="233" loading="lazy">
+                  </div>
                   <figcaption class="figure-caption content has-text-centered"><strong>Primitive substitution</strong></figcaption>
                 </figure>
 
                 <figure class="research-figure editing-example" data-results-slide role="group" aria-roledescription="slide" aria-label="Instance count" hidden>
-                  <img src="static/assets/edit-2.png" alt="A dining-table set edited from four chairs to six chairs by changing the chair-count parameter" loading="lazy">
+                  <div class="editing-example__image-frame">
+                    <img src="static/assets/edit-2.png" alt="A dining-table set edited from four chairs to six chairs by changing the chair-count parameter" width="961" height="235" loading="lazy">
+                  </div>
                   <figcaption class="figure-caption content has-text-centered"><strong>Instance count</strong></figcaption>
                 </figure>
 
                 <figure class="research-figure editing-example" data-results-slide role="group" aria-roledescription="slide" aria-label="Spatial refinement" hidden>
-                  <img src="static/assets/edit-3.png" alt="A woven rod structure made denser by reducing its rod-spacing parameter from 0.2 to 0.1" loading="lazy">
+                  <div class="editing-example__image-frame">
+                    <img src="static/assets/edit-3.png" alt="A woven rod structure made denser by reducing its rod-spacing parameter from 0.2 to 0.1" width="961" height="253" loading="lazy">
+                  </div>
                   <figcaption class="figure-caption content has-text-centered"><strong>Spatial refinement</strong></figcaption>
                 </figure>
               </div>
@@ -234,7 +240,6 @@
                   <span>Reset view</span>
                 </button>
               </div>
-              <figcaption class="figure-caption content has-text-centered"><strong>Upright piano.</strong> Drag the divider to compare the original aDSL object with its high-fidelity replacement.</figcaption>
             </figure>
 
             <figure class="research-figure comparison-case" data-results-slide role="group" aria-roledescription="slide" aria-label="Sofa" hidden>
@@ -268,7 +273,6 @@
                   <span>Reset view</span>
                 </button>
               </div>
-              <figcaption class="figure-caption content has-text-centered"><strong>Sofa.</strong> Drag the divider to compare the original aDSL object with its high-fidelity replacement.</figcaption>
             </figure>
 
             <figure class="research-figure comparison-case" data-results-slide role="group" aria-roledescription="slide" aria-label="Kitchen" hidden>
@@ -302,7 +306,6 @@
                   <span>Reset view</span>
                 </button>
               </div>
-              <figcaption class="figure-caption content has-text-centered"><strong>Kitchen.</strong> Drag the divider to compare the original aDSL scene with its high-fidelity replacement.</figcaption>
             </figure>
 
             <figure class="research-figure comparison-case" data-results-slide role="group" aria-roledescription="slide" aria-label="Living room" hidden>
@@ -336,7 +339,6 @@
                   <span>Reset view</span>
                 </button>
               </div>
-              <figcaption class="figure-caption content has-text-centered"><strong>Living room.</strong> Drag the divider to compare the original aDSL scene with its high-fidelity replacement.</figcaption>
             </figure>
               </div>
 
@@ -351,17 +353,15 @@
     <section class="section asset-showcase" aria-labelledby="interactive-results-title">
       <div class="container is-max-desktop">
         <div class="asset-showcase__header has-text-centered">
-          <p class="asset-showcase__eyebrow">Generated with aDSL</p>
           <h2 id="interactive-results-title" class="title is-3">Simulation-Ready Assets</h2>
-          <p class="asset-showcase__intro">Explore generated URDF assets, including their visual geometry and articulated joint limits.</p>
         </div>
 
         <div class="editing-carousel" data-results-carousel role="region" aria-roledescription="carousel" aria-labelledby="interactive-results-title">
           <div class="editing-carousel__viewport">
-            <div class="is-active" data-results-slide role="group" aria-roledescription="slide" aria-label="Bathroom faucet">
+            <div class="is-active" data-results-slide role="group" aria-roledescription="slide" aria-label="Faucet">
             <article class="asset-card" data-urdf-card data-urdf-src="static/resources/articulation/faucet/faucet.urdf">
               <div class="asset-card__viewer">
-                <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a bathroom faucet. Drag to rotate and scroll to zoom.">
+                <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a faucet. Drag to rotate and scroll to zoom.">
                   <div class="asset-viewer__status" data-viewer-status role="status">
                     <span class="asset-viewer__spinner" aria-hidden="true"></span>
                     <span>Loading URDF asset</span>
@@ -379,7 +379,7 @@
               </div>
 
               <div class="asset-card__content">
-                <h3 class="asset-card__title">Bathroom Faucet</h3>
+                <h3 class="asset-card__title">Faucet</h3>
                 <div class="asset-card__prompt">
                   <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Joint controls</p>
                   <div data-urdf-joints><p>Loading joints...</p></div>
@@ -391,7 +391,7 @@
             </article>
             </div>
 
-            <div data-results-slide role="group" aria-roledescription="slide" aria-label="CNC machine" hidden>
+            <div data-results-slide role="group" aria-roledescription="slide" aria-label="CNC Machine" hidden>
             <article class="asset-card" data-urdf-card data-urdf-src="static/resources/articulation/CNCMachine/CNCMachine.urdf">
               <div class="asset-card__viewer">
                 <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a CNC machine. Drag to rotate and scroll to zoom.">
@@ -424,10 +424,10 @@
             </article>
             </div>
 
-            <div data-results-slide role="group" aria-roledescription="slide" aria-label="French-door refrigerator" hidden>
+            <div data-results-slide role="group" aria-roledescription="slide" aria-label="Refrigerator" hidden>
             <article class="asset-card" data-urdf-card data-urdf-src="static/resources/articulation/fridge/fridge.urdf">
               <div class="asset-card__viewer">
-                <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a French-door refrigerator. Drag to rotate and scroll to zoom.">
+                <div class="asset-viewer" data-viewer role="group" aria-label="Interactive URDF model of a refrigerator. Drag to rotate and scroll to zoom.">
                   <div class="asset-viewer__status" data-viewer-status role="status">
                     <span class="asset-viewer__spinner" aria-hidden="true"></span>
                     <span>Loading URDF asset</span>
@@ -445,7 +445,7 @@
               </div>
 
               <div class="asset-card__content">
-                <h3 class="asset-card__title">French-door Refrigerator</h3>
+                <h3 class="asset-card__title">Refrigerator</h3>
                 <div class="asset-card__prompt">
                   <p class="asset-card__prompt-label"><i class="fas fa-sliders-h" aria-hidden="true"></i> Joint controls</p>
                   <div data-urdf-joints><p>Loading joints...</p></div>
@@ -516,7 +516,7 @@
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
-            <p>This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>, adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a> project page. You are free to borrow the source code; please link back to the template in the footer. This website is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+            <p>This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>, adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a> project page.</p>
           </div>
         </div>
       </div>
