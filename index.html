@@ -22,8 +22,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
-
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -81,17 +79,6 @@
       </div>
     </section>
 
-    <section class="hero teaser">
-      <div class="container is-max-desktop">
-        <div class="hero-body">
-          <figure class="research-figure teaser-figure">
-            <img src="static/images/teaser-v3.jpg" alt="SceneLang teaser showing agentic 3D creation results" fetchpriority="high">
-            <figcaption class="figure-caption content has-text-justified"><strong>Figure 1.</strong> We present a jointly designed DSL and multi-agent system for robust text- and image-conditioned 3D modeling. The same structured representation also supports downstream applications including articulated asset modeling, shape editing and scene-level creation.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
     <section class="section section-muted">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
@@ -105,101 +92,6 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">Agent System</h2>
-            <figure class="research-figure">
-              <img src="static/images/overview-v5.png" alt="Overview of the agentic 3D creation system" loading="lazy">
-              <figcaption class="figure-caption content has-text-justified"><strong>Figure 4.</strong> Overview of our agentic 3D creation system. Given user input, <em>Planner</em> derives structured decompositions and verifiable constraints. <em>Coder</em> synthesizes a program executed by <em>Executor</em> to generate 3D assets. Subsequently, <em>Debugger</em> resolves execution failures and <em>Critic</em> evaluates semantic alignment, providing feedback to refine the generated geometry.</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-muted">
-      <div class="container is-max-desktop has-text-centered">
-        <h2 class="title is-3">Applications</h2>
-        <div class="columns is-centered gallery-columns">
-          <div class="column">
-            <article class="card gallery-card">
-              <div class="card-image">
-                <figure class="image is-square">
-                  <img src="static/images/High-Fidelity-v1.jpg" alt="High-fidelity shape generation results" loading="lazy">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content is-size-7 has-text-justified"><strong>Figure 10.</strong> High-fidelity shape generation results via external model conditioning. The aDSL program (“Ours”) serves as a geometric condition to guide the external generator via the SpaceControl protocol (“Ours + SpaceControl”).</div>
-              </div>
-            </article>
-          </div>
-
-          <div class="column">
-            <article class="card gallery-card">
-              <div class="card-image">
-                <figure class="image is-square">
-                  <img src="static/images/image2scene-v1.jpg" alt="Image-to-scene generation results" loading="lazy">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content is-size-7 has-text-justified"><strong>Figure 11.</strong> High-fidelity text-to-scene generation results. Our hierarchical aDSL separates object structure from scene layout, enabling objects to be extracted, refined with a pre-trained generator, and recomposed into a high-fidelity scene under the original spatial constraints.</div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">Shape Editing</h2>
-            <figure class="research-figure">
-              <img src="static/images/editing-v2.jpg" alt="Shape editing through programmatic manipulation" loading="lazy">
-              <figcaption class="figure-caption content has-text-justified"><strong>Figure 9.</strong> Shape editing via localized program rewrites.</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-muted">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">Articulated Shape Generation</h2>
-            <figure>
-              <div class="columns is-multiline is-centered articulation-grid">
-                <div class="column is-one-third"><video autoplay controls muted loop playsinline preload="metadata" data-autoplay aria-label="Toolbox articulation result"><source src="static/videos/toolbox30001-0120.mp4" type="video/mp4"></video></div>
-                <div class="column is-one-third"><video autoplay controls muted loop playsinline preload="metadata" data-autoplay aria-label="Stationery articulation result"><source src="static/videos/stationery150001-0120.mp4" type="video/mp4"></video></div>
-                <div class="column is-one-third"><video autoplay controls muted loop playsinline preload="metadata" data-autoplay aria-label="Faucet articulation result"><source src="static/videos/faucet100001-0120.mp4" type="video/mp4"></video></div>
-                <div class="column is-one-third"><video autoplay controls muted loop playsinline preload="metadata" data-autoplay aria-label="Trash can articulation result"><source src="static/videos/trash30001-0120.mp4" type="video/mp4"></video></div>
-                <div class="column is-one-third"><video autoplay controls muted loop playsinline preload="metadata" data-autoplay aria-label="Scissors articulation result"><source src="static/videos/scissors150001-0120.mp4" type="video/mp4"></video></div>
-                <div class="column is-one-third"><video autoplay controls muted loop playsinline preload="metadata" data-autoplay aria-label="Fridge articulation result"><source src="static/videos/fridge70001-0120.mp4" type="video/mp4"></video></div>
-              </div>
-              <figcaption class="figure-caption content has-text-justified"><strong>Figure 7.</strong> Articulated object generation results. Given text or image prompts, our system synthesizes structured assets together with joint-enabled part hierarchies, covering diverse articulated objects including industrial tools, appliances, and characters.</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">DSL for 3D Assets</h2>
-            <figure class="research-figure">
-              <img src="static/images/DSL-v4.jpg" alt="Design and usage of aDSL for programmatic 3D shape modeling" loading="lazy">
-              <figcaption class="figure-caption content has-text-justified"><strong>Figure 2.</strong> Design and use of our aDSL for programmatic 3D shape modeling. (a) aDSL: Our framework is built on four core design elements: geometric primitives, boolean operations, hierarchical composition, and spatial reasoning. (b) Component Fabrication: Complex shapes are constructed via Constructive Solid Geometry (CSG) and hierarchical composition. Additionally, spatial reasoning operators are applied to declaratively resolve layout constraints and relative positioning. (c) Global Assembly: Fabricated parts are organized hierarchically into a semantic object using Python classes, facilitating modular reuse and high-level asset definition.</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
