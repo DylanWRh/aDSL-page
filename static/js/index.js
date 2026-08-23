@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', updateScrollButton, { passive: true });
   updateScrollButton();
 
-  document.querySelectorAll('[data-editing-carousel]').forEach(function (carousel) {
-    var slides = Array.prototype.slice.call(carousel.querySelectorAll('[data-editing-slide]'));
-    var previousButton = carousel.querySelector('[data-editing-previous]');
-    var nextButton = carousel.querySelector('[data-editing-next]');
+  document.querySelectorAll('[data-results-carousel]').forEach(function (carousel) {
+    var slides = Array.prototype.slice.call(carousel.querySelectorAll('[data-results-slide]'));
+    var previousButton = carousel.querySelector('[data-results-previous]');
+    var nextButton = carousel.querySelector('[data-results-next]');
     var currentIndex = 0;
 
     if (slides.length < 2 || !previousButton || !nextButton) return;
@@ -37,16 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     nextButton.addEventListener('click', function () {
       showSlide(currentIndex + 1);
-    });
-
-    carousel.addEventListener('keydown', function (event) {
-      if (event.key === 'ArrowLeft') {
-        event.preventDefault();
-        showSlide(currentIndex - 1);
-      } else if (event.key === 'ArrowRight') {
-        event.preventDefault();
-        showSlide(currentIndex + 1);
-      }
     });
 
     showSlide(0);

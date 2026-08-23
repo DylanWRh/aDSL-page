@@ -1,0 +1,258 @@
+<?xml version="1.0" ?>
+<robot name="CNC_Milling_Machine">
+  <material name="mat_cube_808080ff">
+    <color rgba="0.5 0.5 0.5 1"/>
+  </material>
+  <material name="mat_cube_333333ff">
+    <color rgba="0.2 0.2 0.2 1"/>
+  </material>
+  <material name="mat_cube_1accccff">
+    <color rgba="0.1 0.8 0.8 1"/>
+  </material>
+  <material name="mat_cube_737373ff">
+    <color rgba="0.45 0.45 0.45 1"/>
+  </material>
+  <material name="mat_cube_595959ff">
+    <color rgba="0.35 0.35 0.35 1"/>
+  </material>
+  <material name="mat_cylinder_333333ff">
+    <color rgba="0.2 0.2 0.2 1"/>
+  </material>
+  <material name="mat_cylinder_b2b2b2ff">
+    <color rgba="0.7 0.7 0.7 1"/>
+  </material>
+  <material name="mat_cylinder_666666ff">
+    <color rgba="0.4 0.4 0.4 1"/>
+  </material>
+  <material name="mat_cylinder_cccc33ff">
+    <color rgba="0.8 0.8 0.2 1"/>
+  </material>
+  <material name="mat_cube_4c4c4cff">
+    <color rgba="0.3 0.3 0.3 1"/>
+  </material>
+  <material name="mat_BooleanDifference">
+    <color rgba="0.6 0.6 0.6 1"/>
+  </material>
+  <link name="CNC_Milling_Machine"/>
+  <link name="Cube">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <box size="1.2 1.2 0.4"/>
+      </geometry>
+      <material name="mat_cube_808080ff">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <box size="1.2 1.2 0.4"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Concatenated">
+    <visual>
+      <origin xyz="0 -0.74330127 0.00179491924" rpy="-0.523598776 -0 0"/>
+      <geometry>
+        <box size="0.5 0.1 0.4"/>
+      </geometry>
+      <material name="mat_cube_333333ff">
+        <color rgba="0.2 0.2 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.74330127 0.00179491924" rpy="-0.523598776 -0 0"/>
+      <geometry>
+        <box size="0.5 0.1 0.4"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.770262794 0.0750961894" rpy="-0.523598776 -0 0"/>
+      <geometry>
+        <box size="0.4 0.02 0.25"/>
+      </geometry>
+      <material name="mat_cube_1accccff">
+        <color rgba="0.1 0.8 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.770262794 0.0750961894" rpy="-0.523598776 -0 0"/>
+      <geometry>
+        <box size="0.4 0.02 0.25"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Cube_1">
+    <visual>
+      <origin xyz="0 0.4 0.9" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.6 0.4 1.4"/>
+      </geometry>
+      <material name="mat_cube_737373ff">
+        <color rgba="0.45 0.45 0.45 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0.4 0.9" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.6 0.4 1.4"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Concatenated_1">
+    <visual>
+      <origin xyz="0 -0.05 1.2" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.4 0.5 0.5"/>
+      </geometry>
+      <material name="mat_cube_595959ff">
+        <color rgba="0.35 0.35 0.35 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.05 1.2" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.4 0.5 0.5"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.15 1.6" rpy="0 -0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.3"/>
+      </geometry>
+      <material name="mat_cylinder_333333ff">
+        <color rgba="0.2 0.2 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.15 1.6" rpy="0 -0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.3"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Concatenated_2">
+    <visual>
+      <origin xyz="0 -0.15 0.875" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.15"/>
+      </geometry>
+      <material name="mat_cylinder_b2b2b2ff">
+        <color rgba="0.7 0.7 0.7 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.15 0.875" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.15"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.15 0.775" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.05"/>
+      </geometry>
+      <material name="mat_cylinder_666666ff">
+        <color rgba="0.4 0.4 0.4 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.15 0.775" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.15 0.7" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.015" length="0.1"/>
+      </geometry>
+      <material name="mat_cylinder_cccc33ff">
+        <color rgba="0.8 0.8 0.2 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.15 0.7" rpy="3.14159265 -0 0"/>
+      <geometry>
+        <cylinder radius="0.015" length="0.1"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Cube_2">
+    <visual>
+      <origin xyz="0 -0.2 0.25" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.1"/>
+      </geometry>
+      <material name="mat_cube_4c4c4cff">
+        <color rgba="0.3 0.3 0.3 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.2 0.25" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="BooleanDifference">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+      <geometry>
+        <mesh filename="meshes/BooleanDifference.glb"/>
+      </geometry>
+      <material name="mat_BooleanDifference">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+      <geometry>
+        <mesh filename="meshes/BooleanDifference.glb"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_fixed" type="fixed">
+    <parent link="CNC_Milling_Machine"/>
+    <child link="Cube"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+  </joint>
+  <joint name="control_panel" type="fixed">
+    <parent link="Cube"/>
+    <child link="Concatenated"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+  </joint>
+  <joint name="column" type="fixed">
+    <parent link="Cube"/>
+    <child link="Cube_1"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+  </joint>
+  <joint name="z_head" type="prismatic">
+    <parent link="Cube_1"/>
+    <child link="Concatenated_1"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.25" upper="0.1"/>
+  </joint>
+  <joint name="spindle" type="continuous">
+    <parent link="Concatenated_1"/>
+    <child link="Concatenated_2"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="y_saddle" type="prismatic">
+    <parent link="Cube"/>
+    <child link="Cube_2"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.25" upper="0.15"/>
+  </joint>
+  <joint name="x_table" type="prismatic">
+    <parent link="Cube_2"/>
+    <child link="BooleanDifference"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.4" upper="0.4"/>
+  </joint>
+</robot>

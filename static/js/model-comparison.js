@@ -2,6 +2,9 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
+const NORMALIZED_COMPARISON_RADIUS = 1;
+const COMPARISON_CAMERA_DISTANCE = 2.8;
+
 document.querySelectorAll('[data-model-comparison]').forEach((comparison) => {
   createModelComparison(comparison);
 });
@@ -10,6 +13,8 @@ function createModelComparison(comparison) {
   const canvas = comparison.querySelector('[data-comparison-canvas]');
   const divider = comparison.querySelector('[data-comparison-divider]');
   const status = comparison.querySelector('[data-comparison-status]');
+  const hint = comparison.querySelector('[data-comparison-hint]');
+  const resetButton = comparison.querySelector('[data-comparison-reset]');
   const beforeUrl = comparison.dataset.beforeModel;
   const afterUrl = comparison.dataset.afterModel;
 
@@ -49,6 +54,16 @@ function createModelComparison(comparison) {
   controls.enableDamping = true;
   controls.dampingFactor = 0.07;
   controls.enablePan = false;
+
+  controls.addEventListener('start', () => {
+    hint?.classList.add('is-dismissed');
+  });
+
+  resetButton?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    controls.reset();
+    hint?.classList.remove('is-dismissed');
+  });
 
   let beforeModel = null;
   let afterModel = null;
@@ -113,11 +128,6 @@ function createModelComparison(comparison) {
     split = THREE.MathUtils.clamp(nextSplit, 0.02, 0.98);
     const originalPercent = Math.round(split * 100);
     divider.style.left = `${originalPercent}%`;
-    divider.setAttribute('aria-valuenow', String(originalPercent));
-    divider.setAttribute(
-      'aria-valuetext',
-      `${originalPercent}% original, ${100 - originalPercent}% high-fidelity replacement`
-    );
   }
 
   function updateSplitFromPointer(event) {
@@ -148,19 +158,6 @@ function createModelComparison(comparison) {
 
   divider.addEventListener('pointerup', finishDividerDrag);
   divider.addEventListener('pointercancel', finishDividerDrag);
-
-  divider.addEventListener('keydown', (event) => {
-    let nextSplit = split;
-
-    if (event.key === 'ArrowLeft') nextSplit -= 0.02;
-    else if (event.key === 'ArrowRight') nextSplit += 0.02;
-    else if (event.key === 'Home') nextSplit = 0.02;
-    else if (event.key === 'End') nextSplit = 0.98;
-    else return;
-
-    event.preventDefault();
-    setSplit(nextSplit);
-  });
 
   const resizeObserver = new ResizeObserver(() => {
     resizeRenderer();
@@ -216,6 +213,23 @@ function createModelComparison(comparison) {
       beforeModel.updateMatrixWorld(true);
       afterModel.updateMatrixWorld(true);
 
+      const alignedBounds = new THREE.Box3()
+        .expandByObject(beforeModel)
+        .expandByObject(afterModel);
+      const alignedSphere = alignedBounds.getBoundingSphere(new THREE.Sphere());
+
+      if (!Number.isFinite(alignedSphere.radius) || alignedSphere.radius <= 0) {
+        throw new Error('The comparison models have invalid bounds.');
+      }
+
+      const comparisonScale = NORMALIZED_COMPARISON_RADIUS / alignedSphere.radius;
+
+      [beforeModel, afterModel].forEach((model) => {
+        model.position.multiplyScalar(comparisonScale);
+        model.scale.multiplyScalar(comparisonScale);
+        model.updateMatrixWorld(true);
+      });
+
       const bounds = new THREE.Box3()
         .expandByObject(beforeModel)
         .expandByObject(afterModel);
@@ -224,12 +238,8 @@ function createModelComparison(comparison) {
 
       resizeRenderer();
 
-      const target = new THREE.Vector3(0, size.y * 0.46, 0);
-      const verticalFov = THREE.MathUtils.degToRad(camera.fov);
-      const horizontalFov = 2 * Math.atan(Math.tan(verticalFov / 2) * camera.aspect);
-      const verticalDistance = size.y / (2 * Math.tan(verticalFov / 2));
-      const horizontalDistance = size.x / (2 * Math.tan(horizontalFov / 2));
-      const distance = Math.max(verticalDistance, horizontalDistance, maxDimension) * 1.35;
+      const target = bounds.getCenter(new THREE.Vector3());
+      const distance = COMPARISON_CAMERA_DISTANCE;
       const direction = new THREE.Vector3(1.1, 0.72, 1.35).normalize();
 
       camera.position.copy(target).add(direction.multiplyScalar(distance));
